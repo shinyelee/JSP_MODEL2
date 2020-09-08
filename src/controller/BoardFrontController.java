@@ -1,3 +1,5 @@
+/*
+
 package controller; // 모든 클라이언트의 요청을 받아서 제어하는 컨트롤러 클래스.
 
 import java.io.IOException;
@@ -130,3 +132,5 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet {
 	}
 	
 }
+
+*/
