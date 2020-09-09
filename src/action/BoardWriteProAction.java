@@ -1,3 +1,5 @@
+/*
+
 package action; // 새로운 글을 등록하는 Action 클래스.
 
 import java.io.PrintWriter;
@@ -62,3 +64,5 @@ public class BoardWriteProAction implements Action {
 	}
 	
 }
+
+*/
