@@ -1,5 +1,3 @@
-/*
-
 package action; // 글 상세 내용 보기 요청을 처리하는 Action 클래스
 
 import javax.servlet.http.HttpServletRequest;
@@ -26,5 +24,3 @@ public class BoardDetailAction implements Action {
 	}
 
 }
-
-*/
