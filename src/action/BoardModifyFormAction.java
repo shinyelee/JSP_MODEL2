@@ -1,4 +1,6 @@
-package action;
+/*
+
+package action; // 글 수정폼 보기 요청을 처리하는 Action 클래스.
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -23,3 +25,5 @@ public class BoardModifyFormAction implements Action {
 	}
 
 }
+
+*/
