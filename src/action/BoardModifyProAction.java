@@ -1,3 +1,5 @@
+/*
+
 package action; // 글 수정 요청을 처리하는 Action 클래스.
 
 import java.io.PrintWriter;
@@ -53,3 +55,5 @@ public class BoardModifyProAction implements Action {
 	}
 	
 }
+
+*/
