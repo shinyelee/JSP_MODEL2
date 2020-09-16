@@ -1,3 +1,5 @@
+/*
+
 package action;
 
 import java.io.PrintWriter;
@@ -21,7 +23,7 @@ public class BoardReplyProAction implements Action {
 		article.setBoard_content(request.getParameter("board_content"));
 		article.setBoard_re_ref(Integer.parseInt(request.getParameter("board_re_ref")));
 		article.setBoard_re_lev(Integer.parseInt(request.getParameter("board_re_lev")));
-		article.setBoard_re_seq(Integer.parseInt(request.getParameter("board_re_seq")));
+		article.setBoard_seq(Integer.parseInt(request.getParameter("board_re_seq")));
 		// 답변글 등록 작업을 하는 메소드를 호출.
 		BoardReplyProService boardReplyProService = new BoardReplyProService();
 		boolean isReplySuccess = boardReplyProService.replyArticle(article);
@@ -45,3 +47,5 @@ public class BoardReplyProAction implements Action {
 	}
 
 }
+
+*/

@@ -1,3 +1,5 @@
+/*
+
 package action;
 
 import java.io.PrintWriter;
@@ -49,3 +51,5 @@ public class BoardDeleteProAction implements Action {
 	}
 	
 }
+
+*/
