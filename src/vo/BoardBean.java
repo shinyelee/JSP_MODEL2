@@ -12,7 +12,7 @@ public class BoardBean { // 게시판글 하나의 정보를 저장하는 클래스.
 	private String board_file; // 첨부 파일.
 	private int board_re_ref; // 관련글 번호.
 	private int board_re_lev; // 답글 레벨.
-	private int board_step; // 관련글 중 출력 순서.
+	private int board_seq; // 관련글 중 출력 순서.
 	private int board_readcount; // 조회수.
 	private Date board_date; // 작성일.
 	// alt+shift+s -> r(Generate Getters and Setters) -> (Select All) -> OK.
@@ -80,12 +80,12 @@ public class BoardBean { // 게시판글 하나의 정보를 저장하는 클래스.
 		this.board_re_lev = board_re_lev;
 	}
 	
-	public int getBoard_step() {
-		return board_step;
+	public int getBoard_seq() {
+		return board_seq;
 	}
 	
-	public void setBoard_step(int board_step) {
-		this.board_step = board_step;
+	public void setBoard_seq(int board_seq) {
+		this.board_seq = board_seq;
 	}
 	
 	public int getBoard_readcount() {
