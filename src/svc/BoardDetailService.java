@@ -1,3 +1,5 @@
+/*
+
 package svc;
 
 import java.sql.Connection;
@@ -30,3 +32,5 @@ public class BoardDetailService { // 글 상세 내용 보기 요청을 처리하는 비즈니스 
 	}
 	
 }
+
+*/
