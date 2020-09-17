@@ -8,7 +8,7 @@ import dao.BoardDAO;
 import vo.BoardBean;
 import static db.JdbcUtil.*;
 
-public class BoardListService {
+public class BoardListService { // 글 목록 보기 요청을 처리하는 비즈니스 로직을 구현하는 Service 클래스.
 	
 	public int getListCount() throws Exception {
 		

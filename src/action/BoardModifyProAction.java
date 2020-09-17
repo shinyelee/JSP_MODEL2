@@ -1,6 +1,6 @@
 /*
 
-package action; // 글 수정 요청을 처리하는 Action 클래스.
+package action;
 
 import java.io.PrintWriter;
 import javax.servlet.http.HttpServletRequest;
@@ -9,7 +9,7 @@ import svc.BoardModifyProService;
 import vo.ActionForward;
 import vo.BoardBean;
 
-public class BoardModifyProAction implements Action {
+public class BoardModifyProAction implements Action { // 글 수정 요청을 처리하는 Action 클래스.
 
 	public ActionForward execute(HttpServletRequest request,HttpServletResponse response) throws Exception {
 		

@@ -9,7 +9,7 @@ import svc.BoardReplyProService;
 import vo.ActionForward;
 import vo.BoardBean;
 
-public class BoardReplyProAction implements Action {
+public class BoardReplyProAction implements Action { // 답변글 등록 요청을 처리하는 Action 클래스.
 	
 	public ActionForward execute(HttpServletRequest request,HttpServletResponse response) throws Exception {
 		

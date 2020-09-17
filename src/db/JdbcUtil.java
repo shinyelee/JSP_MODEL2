@@ -5,7 +5,7 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
-public class JdbcUtil {
+public class JdbcUtil { // DB 관련 공통 기능 클래스.
 
 	public static Connection getConnection() { // Connection Pool에서 Connection 객체를 얻어와서 반환하는 메소드를 정의.
 		Connection con = null;

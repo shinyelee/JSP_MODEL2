@@ -7,7 +7,7 @@ import dao.BoardDAO;
 import vo.BoardBean;
 import static db.JdbcUtil.*;
 
-public class BoardWriteProService {
+public class BoardWriteProService { // 글 등록 요청을 처리하는 비즈니스 로직을 구현하는 Service 클래스.
 
 	public boolean registArticle(BoardBean boardBean) throws Exception {
 		

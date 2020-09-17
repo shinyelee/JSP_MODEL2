@@ -5,7 +5,7 @@ import dao.BoardDAO;
 import vo.BoardBean;
 import static db.JdbcUtil.*;
 
-public class BoardDetailService {
+public class BoardDetailService { // 글 상세 내용 보기 요청을 처리하는 비즈니스 로직을 구현하는 Service 클래스.
 
 	public BoardBean getArticle(int board) throws Exception {
 		

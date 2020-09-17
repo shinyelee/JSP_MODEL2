@@ -8,7 +8,7 @@ import svc.BoardDetailService;
 import vo.ActionForward;
 import vo.BoardBean;
 
-public class BoardReplyFormAction implements Action {
+public class BoardReplyFormAction implements Action { // 답변글 쓰기 폼 출력 요청을 처리하는 Action 클래스.
 
 	public ActionForward execute(HttpServletRequest request,HttpServletResponse response) throws Exception {
 		

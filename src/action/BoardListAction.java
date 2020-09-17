@@ -1,6 +1,6 @@
 /*
 
-package action; // 글 목록 보기 요청을 처리하는 Action 클래스.
+package action;
 
 import java.util.*;
 import javax.servlet.http.HttpServletRequest;
@@ -10,7 +10,7 @@ import vo.ActionForward;
 import vo.BoardBean;
 import vo.PageInfo;
 
-public class BoardListAction implements Action {
+public class BoardListAction implements Action { // 글 목록 보기 요청을 처리하는 Action 클래스.
 	
 	public ActionForward execute(HttpServletRequest request,HttpServletResponse response) throws Exception {
 		

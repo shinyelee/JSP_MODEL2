@@ -1,6 +1,6 @@
 /*
 
-package action; // 새로운 글을 등록하는 Action 클래스.
+package action;
 
 import java.io.PrintWriter;
 import javax.servlet.ServletContext;
@@ -12,7 +12,7 @@ import vo.BoardBean;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.Multipart.DefaultFileRenamePolicy;
 
-public class BoardWriteProAction implements Action {
+public class BoardWriteProAction implements Action { // 새로운 글을 등록하는 Action 클래스.
 	
 	public ActionForward execute(HttpServletRequest request,HttpServletResponse response) throws Exception {
 		

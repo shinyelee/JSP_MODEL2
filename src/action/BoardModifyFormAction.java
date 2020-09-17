@@ -1,6 +1,6 @@
 /*
 
-package action; // 글 수정폼 보기 요청을 처리하는 Action 클래스.
+package action;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -8,7 +8,7 @@ import svc.BoardDetailService;
 import vo.ActionForward;
 import vo.BoardBean;
 
-public class BoardModifyFormAction implements Action {
+public class BoardModifyFormAction implements Action { // 글 수정폼 보기 요청을 처리하는 Action 클래스.
 	
 	public ActionForward execute(HttpServletRequest request,HttpServletResponse response) throws Exception {
 		

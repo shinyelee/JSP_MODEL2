@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import svc.BoardDeleteProService;
 import vo.ActionForward;
 
-public class BoardDeleteProAction implements Action {
+public class BoardDeleteProAction implements Action { // 글 삭제 요청을 처리하는 Action 클래스.
 
 	public ActionForward execute(HttpServletRequest request,HttpServletResponse response) throws Exception {
 		

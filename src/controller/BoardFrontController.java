@@ -1,6 +1,6 @@
 /*
 
-package controller; // 모든 클라이언트의 요청을 받아서 제어하는 컨트롤러 클래스.
+package controller;
 
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
@@ -20,7 +20,7 @@ import action.BoardWriteProAction;
 import vo.ActionForward;
 
 @WebServlet("*.bo") // 마지막 url이 *.bo로 끝나는 요청을 매핑하는 서블릿으로 지정.
-public class BoardFrontController extends javax.servlet.http.HttpServlet {
+public class BoardFrontController extends javax.servlet.http.HttpServlet { // 모든 클라이언트의 요청을 받아서 제어하는 컨트롤러 클래스.
 	
 	protected void doProcess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
