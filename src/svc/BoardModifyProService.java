@@ -1,3 +1,5 @@
+/*
+
 package svc;
 
 import java.sql.Connection;
@@ -44,3 +46,5 @@ public class BoardModifyProService { // 글 수정하기 요청을 처리하는 비즈니스 로�
 	}
 	
 }
+
+*/
