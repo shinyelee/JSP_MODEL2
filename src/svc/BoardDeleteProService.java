@@ -1,3 +1,5 @@
+/*
+
 package svc;
 
 import static db.JdbcUtil.close;
@@ -42,3 +44,5 @@ public class BoardDeleteProService {
 	}
 	
 }
+
+*/
