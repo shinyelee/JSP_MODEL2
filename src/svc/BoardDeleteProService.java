@@ -1,5 +1,3 @@
-/*
-
 package svc;
 
 import static db.JdbcUtil.close;
@@ -9,6 +7,7 @@ import static db.JdbcUtil.rollback;
 import java.sql.Connection;
 import dao.BoardDAO;
 
+// 글 삭제하기 요청을 처리하는 비즈니스 로직을 구현하는 Service 클래스.
 public class BoardDeleteProService {
 	
 	public boolean isArticleWriter(int board_num, String pass) throws Exception {
@@ -31,7 +30,8 @@ public class BoardDeleteProService {
 		boardDAO.setConnection(con);
 		int deleteCount = boardDAO.deleteArticle(board_num);
 		
-		if(deleteCount > 0) { // 트랜잭션을 처리.
+		// 트랜잭션을 처리.
+		if(deleteCount > 0) {
 			commit(con);
 			isRemoveSuccess=true;
 		}
@@ -44,5 +44,3 @@ public class BoardDeleteProService {
 	}
 	
 }
-
-*/

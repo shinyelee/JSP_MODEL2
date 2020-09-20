@@ -1,5 +1,3 @@
-/*
-
 package svc;
 
 import java.sql.Connection;
@@ -7,6 +5,7 @@ import dao.BoardDAO;
 import vo.BoardBean;
 import static db.JdbcUtil.*;
 
+// 답변하기 요청을 처리하는 비즈니스 로직을 구현하는 Service 클래스.
 public class BoardReplyProService {
 	
 	public boolean replyArticle(BoardBean article) throws Exception {
@@ -21,7 +20,7 @@ public class BoardReplyProService {
 		
 		if(insertCount > 0) {
 			commit(con);
-			is ReplySuccess = true;
+			isReplySuccess = true;
 		}
 		else {
 			rollback(con);
@@ -33,5 +32,3 @@ public class BoardReplyProService {
 	}
 
 }
-
-*/

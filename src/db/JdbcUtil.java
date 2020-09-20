@@ -5,9 +5,11 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
-public class JdbcUtil { // DB 관련 공통 기능 클래스.
+// DB 관련 공통 기능 클래스.
+public class JdbcUtil {
 
-	public static Connection getConnection() { // Connection Pool에서 Connection 객체를 얻어와서 반환하는 메소드를 정의.
+	// Connection Pool에서 Connection 객체를 얻어와서 반환하는 메소드를 정의.
+	public static Connection getConnection() {
 		Connection con = null;
 		
 		try {
@@ -23,7 +25,8 @@ public class JdbcUtil { // DB 관련 공통 기능 클래스.
 		return con;
 	}
 	
-	public static void close(Connection con) { // Connection 객체 닫아주는 메소드 정의.
+	// Connection 객체 닫아주는 메소드 정의.
+	public static void close(Connection con) {
 		
 		try {
 			con.close();
@@ -33,7 +36,8 @@ public class JdbcUtil { // DB 관련 공통 기능 클래스.
 		
 	}
 	
-	public static void close(Statement stmt) { // Statement 객체 닫아주는 메소드 정의.
+	// Statement 객체 닫아주는 메소드 정의.
+	public static void close(Statement stmt) {
 		
 		try {
 			stmt.close();
@@ -43,7 +47,8 @@ public class JdbcUtil { // DB 관련 공통 기능 클래스.
 		
 	}
 	
-	public static void close(ResultSet rs) { // ResultSet 객체 닫아주는 메소드 정의.
+	// ResultSet 객체 닫아주는 메소드 정의.
+	public static void close(ResultSet rs) {
 		
 		try {
 			rs.close();
@@ -53,7 +58,8 @@ public class JdbcUtil { // DB 관련 공통 기능 클래스.
 		
 	}
 	
-	public static void commit(Connection con) { // 트랜잭션 중 실행된 작업을 완료시키는 메소드 정의.
+	// 트랜잭션 중 실행된 작업을 완료시키는 메소드 정의.
+	public static void commit(Connection con) {
 		
 		try {
 			con.commit();
@@ -64,7 +70,8 @@ public class JdbcUtil { // DB 관련 공통 기능 클래스.
 			
 	}
 	
-	public static void rollback(Connection con) { // 트랜잭션 중 실행된 작업을 취소시키는 메소드 정의.
+	// 트랜잭션 중 실행된 작업을 취소시키는 메소드 정의.
+	public static void rollback(Connection con) {
 		
 		try {
 			con.rollback();
