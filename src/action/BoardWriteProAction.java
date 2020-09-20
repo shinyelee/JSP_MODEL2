@@ -8,7 +8,7 @@ import svc.BoardWriteProService;
 import vo.ActionForward;
 import vo.BoardBean;
 import com.oreilly.servlet.MultipartRequest;
-import com.oreilly.servlet.Multipart.DefaultFileRenamePolicy;
+import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 // 새로운 글을 등록하는 Action 클래스.
 public class BoardWriteProAction implements Action {
