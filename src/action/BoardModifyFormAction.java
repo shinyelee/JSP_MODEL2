@@ -1,5 +1,3 @@
-/*
-
 package action;
 
 import javax.servlet.http.HttpServletRequest;
@@ -8,7 +6,8 @@ import svc.BoardDetailService;
 import vo.ActionForward;
 import vo.BoardBean;
 
-public class BoardModifyFormAction implements Action { // 글 수정폼 보기 요청을 처리하는 Action 클래스.
+// 글 수정폼 보기 요청을 처리하는 Action 클래스.
+public class BoardModifyFormAction implements Action {
 	
 	public ActionForward execute(HttpServletRequest request,HttpServletResponse response) throws Exception {
 		
@@ -25,5 +24,3 @@ public class BoardModifyFormAction implements Action { // 글 수정폼 보기 요청을 
 	}
 
 }
-
-*/
