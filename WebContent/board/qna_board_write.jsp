@@ -1,3 +1,4 @@
+<!-- 글을 새로 작성하는 화면을 보여주는 뷰페이지. -->
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -40,7 +41,7 @@ table {
 </style>
 </head>
 <body>
-	<!-- 게시판글등록 -->
+	<!-- 게시판글등록. -->
 	<section id="writeForm">
 		<h2>게시판글등록</h2>
 		<!-- 게시판 글 등록 시 파일업로드 기능도 처리하므로 enctype="multipart/form-data" 부분을 지정. 이 entype 속성이 지정되어야 업로드하는 파일이 서버로 제대로 전송된다. -->
