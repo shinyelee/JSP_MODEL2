@@ -29,8 +29,8 @@ public class BoardListAction implements Action {
 		int listCount = boardListService.getListCount(); // 총 글의 개수를 반환하는 메소드 호출.
 		articleList = boardListService.getArticleList(page,limit); // 지정한 페이지에 출력될 글 목록을 반환하는 메소드 호출.
 		int maxPage = (int)((double)listCount/limit+0.95); // 총 페이지 수 계산 -> 0.95를 더해서 올림 처리.
-		int startPage = (((int)((double)page/limit+0.9))-1)*limit+1; // 시작 페이지 번호(1/11/21...).
-		int endPage = startPage+limit-1; // 마지막 페이지 번호(10/20/30...).
+		int startPage = (((int)((double)page/10+0.9))-1)*10+1; // 시작 페이지 번호(1/11/21...).
+		int endPage = startPage+10-1; // 마지막 페이지 번호(10/20/30...).
 		
 		if (endPage > maxPage)
 			endPage = maxPage; // 페이지가 10단위로 안 나누어 떨어질 때.

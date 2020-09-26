@@ -4,7 +4,6 @@ import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import action.Action;
@@ -21,22 +20,10 @@ import vo.ActionForward;
 // 마지막 url이 *.bo로 끝나는 요청을 매핑하는 서블릿으로 지정.
 @WebServlet("*.bo")
 // 모든 클라이언트의 요청을 받아서 제어하는 컨트롤러 클래스.
-public class BoardFrontController extends HttpServlet {
-	
-	private static final long serialVersionUID = 1L;
-
-	public BoardFrontController() {
-		super();
-	}
-	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doProcess(request,response);
-	}
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doProcess(request,response);
-	}
+public class BoardFrontController extends javax.servlet.http.HttpServlet {
 		
+	private static final long serialVersionUID = 2583286413546401627L;
+
 	protected void doProcess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		request.setCharacterEncoding("UTF-8");
@@ -137,6 +124,16 @@ public class BoardFrontController extends HttpServlet {
 
 		}
 	
+	}
+	
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doProcess(request, response);
+	}
+	
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doProcess(request, response);
 	}
 	
 }

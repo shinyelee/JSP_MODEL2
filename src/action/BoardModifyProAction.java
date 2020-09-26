@@ -19,11 +19,11 @@ public class BoardModifyProAction implements Action {
 		BoardBean article = new BoardBean(); // 파라미터로 전송되어 오는 수정 대상이 되는 글의 번호를 얻어옴.
 		BoardModifyProService boardModifyProService = new BoardModifyProService();
 		// 파라미터로 전송된 비밀번호를 사용해서 글 수정 요청을 한 사용자가 글을 작성한 사용자인지를 판단해 주는 메소드를 호출.
-		boolean isRightUser = boardModifyProService.isArticleWriter(board_num, request.getParameter("board_pass"));
+		boolean isRightUser = boardModifyProService.isArticleWriter(board_num, request.getParameter("BOARD_PASS"));
 		
 		// 글 수정 요청을 한 사용자가 글을 작성한 사용자가 아닐 경우 자바 스크립트로 경고 창을 출력하고 이전 페이지로 되돌아가게 처리.
 		if(!isRightUser) {
-			response.setContentType("text/html;charset=UTF=8");
+			response.setContentType("text/html;charset=UTF-8");
 			PrintWriter out = response.getWriter();
 			out.println("<script>");
 			out.println("alert('수정할 권한이 없습니다.');");

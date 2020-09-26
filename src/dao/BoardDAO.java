@@ -66,11 +66,11 @@ public class BoardDAO {
 
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		// limit ?,? 해당 페이지의 시작 레코드 인덱스를 ? 부분에 매핑하여 해당 페이지에 출력될 첫번째 글부터 10개를 조회하게 함.
-		String board_list_sql="select * from board order by BOARD_RE_REF desc,BOARD_RE_SEQ asc limit ?,?";
+		// limit ?, 10  해당 페이지의 시작 레코드 인덱스를 ? 부분에 매핑하여 해당 페이지에 출력될 첫번째 글부터 10개를 조회하게 함.
+		String board_list_sql="select * from board order by BOARD_RE_REF desc,BOARD_RE_SEQ asc limit ?,10";
 		ArrayList<BoardBean> articleList = new ArrayList<BoardBean>();
 		BoardBean board = null;
-		int startrow=(page-1)*limit; // 해당 페이지에서 출력되어야 하는 시작 레코드의 인덱스 번호를 구함.
+		int startrow = (page-1)*10; // 해당 페이지에서 출력되어야 하는 시작 레코드의 인덱스 번호를 구함.
 
 		try {
 			pstmt = con.prepareStatement(board_list_sql);
