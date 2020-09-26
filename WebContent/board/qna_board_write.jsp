@@ -67,7 +67,7 @@ table {
 				</tr>
 				<tr>
 					<td class="td_left"><label for="BOARD_FILE">파일 첨부</label></td>
-					<td class="td_right"><input name="BOARD_FILE" type="file" id="BOARD_FILE" required="required" /></td>
+					<td class="td_right"><input name="BOARD_FILE" type="file" id="BOARD_FILE" /></td>
 				</tr>
 			</table>
 			<section id="commandCell">

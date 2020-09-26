@@ -11,20 +11,20 @@
 	//	   forward.setPath("/board/qna_board_delete.jsp");
 	//	   }
 	// 부분에서 공유되어 있다.
-	int board_num=(Integer)request.getAttribute("board_num");
+	int board_num = (Integer)request.getAttribute("board_num");
     String nowPage = (String)request.getAttribute("page");
 %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8"> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>MVC 게시판</title>
 <style>
 
 #passForm {
 	width: 400px;
 	margin: auto;
-	border : 1px solid orange;
+	border : 1px solid gray;
 }
 	
 </style>

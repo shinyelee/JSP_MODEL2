@@ -66,11 +66,11 @@ public class BoardDAO {
 
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		// limit ?,10 해당 페이지의 시작 레코드 인덱스를 ? 부분에 매핑하여 해당 페이지에 출력될 첫번째 글부터 10개를 조회하게 함.
-		String board_list_sql="select * from board order by BOARD_RE_REF desc,BOARD_RE_SEQ asc limit ?,10";
+		// limit ?,? 해당 페이지의 시작 레코드 인덱스를 ? 부분에 매핑하여 해당 페이지에 출력될 첫번째 글부터 10개를 조회하게 함.
+		String board_list_sql="select * from board order by BOARD_RE_REF desc,BOARD_RE_SEQ asc limit ?,?";
 		ArrayList<BoardBean> articleList = new ArrayList<BoardBean>();
 		BoardBean board = null;
-		int startrow=(page-1)*10; // 해당 페이지에서 출력되어야 하는 시작 레코드의 인덱스 번호를 구함.
+		int startrow=(page-1)*limit; // 해당 페이지에서 출력되어야 하는 시작 레코드의 인덱스 번호를 구함.
 
 		try {
 			pstmt = con.prepareStatement(board_list_sql);
@@ -164,7 +164,7 @@ public class BoardDAO {
 			sql="insert into board (BOARD_NUM,BOARD_NAME,BOARD_PASS,BOARD_SUBJECT,";
 			sql+="BOARD_CONTENT, BOARD_FILE, BOARD_RE_REF,"+
 					"BOARD_RE_LEV,BOARD_RE_SEQ,BOARD_READCOUNT,"+
-					"BOARD_DATE) values(?,?,?,?,?,?,?,?,?,?,now())";
+					"BOARD_DATE) values(?,?,?,?,?,?,?,?,?,?,now())"; // ? 10개
 
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, num);
@@ -207,8 +207,10 @@ public class BoardDAO {
 		try {
 			pstmt=con.prepareStatement(board_max_sql);
 			rs = pstmt.executeQuery();
-			if(rs.next())num =rs.getInt(1)+1;
-			else num=1;
+			if(rs.next())
+				num = rs.getInt(1)+1;
+			else
+				num = 1;
 			// 자신이 답변을 다는 글과 같은 글 그룹에 속하고 자신이 답변들 다는 글보다 뒤에 출력되는 글들의 출력순서를 하나씩 증가시키는 SQL 구문.
 			sql="update board set BOARD_RE_SEQ=BOARD_RE_SEQ+1 where BOARD_RE_REF=? ";
 			sql+="and BOARD_RE_SEQ>?";
@@ -226,7 +228,7 @@ public class BoardDAO {
 			re_lev = re_lev+1;
 			sql="insert into board (BOARD_NUM,BOARD_NAME,BOARD_PASS,BOARD_SUBJECT,";
 			sql+="BOARD_CONTENT, BOARD_FILE,BOARD_RE_REF,BOARD_RE_LEV,BOARD_RE_SEQ,";
-			sql+="BOARD_READCOUNT,BOARD_DATE) values(?,?,?,?,?,?,?,?,?,?,now())";
+			sql+="BOARD_READCOUNT,BOARD_DATE) values(?,?,?,?,?,?,?,?,?,?,now())"; // ? 10개
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, num);
 			pstmt.setString(2, article.getBOARD_NAME());
@@ -278,7 +280,7 @@ public class BoardDAO {
 
 		PreparedStatement pstmt = null;
 		String board_delete_sql="delete from board where BOARD_NUM=?";
-		int deleteCount=0;
+		int deleteCount = 0;
 
 		try {
 			pstmt=con.prepareStatement(board_delete_sql);

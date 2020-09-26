@@ -13,7 +13,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>MVC 게시판</title>
 <style type="text/css">
 #articleForm {
@@ -57,9 +57,8 @@ h2 {
 			제 목 :
 			<%=article.getBOARD_SUBJECT() %>
 			첨부파일 :
-			<%if(!(article.getBOARD_FILE()==null)) { %>
-			<a href="file_down?downFile=<%=article.getBOARD_FILE() %>"> <%=article.getBOARD_FILE() %>
-			</a>
+			<%if(!(article.getBOARD_FILE() == null)) { %>
+			<a href="file_down?downFile=<%=article.getBOARD_FILE() %>"><%=article.getBOARD_FILE() %></a>
 			<%} %>
 		</section>
 		<!-- 이 부분은 스타일시트에서 overflow: auto; 속성을 지정하여 지정한 영역의 크기 이상이 출력되면 스크롤 처리하였다. -->
@@ -69,11 +68,11 @@ h2 {
 	</section>
 	<section id="commandList">
 		<!-- 답변 요청을 링크. 파라미터로 답변할 대상 글의 번호와 페이지 번호를 전송한다. -->
-		<a href="boardReplyForm.bo?board_num=<%=article.getBOARD_NUM() %>&page=<%=nowPage%>"> [답변] </a>
+		<a href="boardReplyForm.bo?board_num=<%=article.getBOARD_NUM() %>&page=<%=nowPage%>">[답변]</a>
 		<!-- 수정 요청을 링크. 수정 처리 대상이 되는 글의 번호를 파라미터 값으로 전송한다. -->
-		<a href="boardModifyForm.bo?board_num=<%=article.getBOARD_NUM() %>"> [수정] </a>
+		<a href="boardModifyForm.bo?board_num=<%=article.getBOARD_NUM() %>">[수정]</a>
 		<!-- 삭제 요청을 링크. 삭제할 글의 번호와 현재 페이지 번호를 파라미터 값으로 전송한다. -->
-		<a href="boardDeleteForm.bo?board_num=<%=article.getBOARD_NUM() %>&page=<%=nowPage%>"> [삭제] </a>
+		<a href="boardDeleteForm.bo?board_num=<%=article.getBOARD_NUM() %>&page=<%=nowPage%>">[삭제]</a>
 		<!-- 목록 요청을 링크. -->
 		<a href="boardList.bo?page=<%=nowPage%>">[목록]</a>&nbsp;&nbsp;
 	</section>

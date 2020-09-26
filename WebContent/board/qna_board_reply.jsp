@@ -12,13 +12,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>MVC 게시판</title>
 <style type="text/css">
 #registForm {
 	width: 500px;
 	height: 610px;
-	border: 1px solid red;
+	border: 1px solid gray;
 	margin: auto;
 }
 
