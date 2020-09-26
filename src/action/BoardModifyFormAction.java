@@ -9,6 +9,7 @@ import vo.BoardBean;
 // 글 수정폼 보기 요청을 처리하는 Action 클래스.
 public class BoardModifyFormAction implements Action {
 	
+	@Override
 	public ActionForward execute(HttpServletRequest request,HttpServletResponse response) throws Exception {
 		
 		ActionForward forward = new ActionForward();

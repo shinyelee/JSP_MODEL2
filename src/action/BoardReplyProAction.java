@@ -10,6 +10,7 @@ import vo.BoardBean;
 // 답변글 등록 요청을 처리하는 Action 클래스.
 public class BoardReplyProAction implements Action {
 	
+	@Override
 	public ActionForward execute(HttpServletRequest request,HttpServletResponse response) throws Exception {
 		
 		ActionForward forward = null;

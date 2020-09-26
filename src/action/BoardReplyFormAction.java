@@ -8,7 +8,8 @@ import vo.BoardBean;
 
 // 답변글 쓰기 폼 출력 요청을 처리하는 Action 클래스.
 public class BoardReplyFormAction implements Action {
-
+	
+	@Override
 	public ActionForward execute(HttpServletRequest request,HttpServletResponse response) throws Exception {
 		
 		ActionForward forward = new ActionForward();

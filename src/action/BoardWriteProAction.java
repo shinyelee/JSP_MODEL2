@@ -13,6 +13,7 @@ import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 // 새로운 글을 등록하는 Action 클래스.
 public class BoardWriteProAction implements Action {
 	
+	@Override
 	public ActionForward execute(HttpServletRequest request,HttpServletResponse response) throws Exception {
 		
 		ActionForward forward=null;
@@ -23,11 +24,7 @@ public class BoardWriteProAction implements Action {
 		ServletContext context = request.getServletContext();
 		realFolder=context.getRealPath(saveFolder); // 파라미터로 지정된 디렉토리의 서버 상의 실제 경로를 얻어옴.
 		// MultipartRequest 객체 생성. 여기서 파일 업로드 처리. 새로 등록할 글 정보를 저장할 BoardBean 객체를 생성.
-		MultipartRequest multi=new MultipartRequest(request,
-				realFolder,
-				fileSize,
-				"UTF-8",
-				new DefaultFileRenamePolicy());
+		MultipartRequest multi=new MultipartRequest(request, realFolder, fileSize, "UTF-8", new DefaultFileRenamePolicy());
 		boardBean = new BoardBean(); // 새로 등록할 글 정보들을 BoardBean 객체의 속성 값으로 할당.
 		// 새로운 글을 등록하는 비즈니스 로직이 실행되는 메소드 호출.
 		boardBean.setBOARD_NAME(multi.getParameter("BOARD_NAME"));

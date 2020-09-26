@@ -9,6 +9,7 @@ import vo.ActionForward;
 // 글 삭제 요청을 처리하는 Action 클래스.
 public class BoardDeleteProAction implements Action {
 
+	@Override
 	public ActionForward execute(HttpServletRequest request,HttpServletResponse response) throws Exception {
 		
 		ActionForward forward = null;
