@@ -27,5 +27,8 @@ public class ActionForward {
 		this.path = path;
 		this.redirect = redirect;
 	}
+	
+	public ActionForward() {
+	}
 
 }
