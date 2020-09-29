@@ -1,5 +1,6 @@
 package vo;
 
+// 개 상품 하나의 정보를 저장하는 클래스.
 public class Goods {
 	
 	private int id; // 상품 아이디.

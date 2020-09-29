@@ -1,5 +1,6 @@
 package vo;
 
+// 장바구니 항목 하나의 정보를 저장하는 클래스.
 public class Cart {
 
 	private String image; // 상품 이미지.
