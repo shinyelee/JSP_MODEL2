@@ -21,6 +21,7 @@ public class BoardWriteProAction implements Action {
 		String realFolder=""; // 서버 상의 파일 경로를 저장할 실제 경로를 저장할 변수를 정의.
 		String saveFolder="/boardUpload"; // 파일을 업로드할 디렉토리명을 지정.
 		int fileSize=5*1024*1024; // 한 번에 업로드할 파일 사이즈를 정의.
+		
 		ServletContext context = request.getServletContext();
 		realFolder=context.getRealPath(saveFolder); // 파라미터로 지정된 디렉토리의 서버 상의 실제 경로를 얻어옴.
 		// MultipartRequest 객체 생성. 여기서 파일 업로드 처리. 새로 등록할 글 정보를 저장할 BoardBean 객체를 생성.
