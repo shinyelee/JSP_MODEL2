@@ -4,13 +4,13 @@ package action;
 
 import java.io.PrintWriter;
 import javax.servlet.ServletContext;
-import javax.servlet.http.HttpServletRequest; // 파일 업로드 처리를 위해 cos.jar 라이브러리에서 제공되는 업로드관련 클래스를 임포트.
-import javax.servlet.http.HttpServletResponse; // 해당 라이브러리를 프로젝트에 추가해야 한다.
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import svc.GoodsRegistService;
 import vo.ActionForward;
 import vo.Goods;
-import com.oreilly.servlet.MultipartRequest;
-import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
+import com.oreilly.servlet.MultipartRequest; // 파일 업로드 처리를 위해 cos.jar 라이브러리에서 제공되는 업로드관련 클래스를 임포트.
+import com.oreilly.servlet.multipart.DefaultFileRenamePolicy; // 해당 라이브러리를 프로젝트에 추가해야 한다.
 
 public class GoodsRegistAction implements Action {
 	
