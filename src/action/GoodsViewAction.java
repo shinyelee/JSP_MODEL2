@@ -9,6 +9,7 @@ import svc.GoodsViewService;
 import vo.ActionForward;
 import vo.Goods;
 
+// 특정 굿즈 상품의 상세 정보보기 요청을 처리하는 Action 클래스.
 public class GoodsViewAction implements Action {
 
 	@Override
