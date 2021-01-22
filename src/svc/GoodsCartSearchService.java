@@ -13,7 +13,7 @@ public class GoodsCartSearchService {
 		// 세션 영역에 공유되어 있는 장바구니 목록 객체를 얻어옴.
 		ArrayList<Cart> oldCartList = (ArrayList<Cart>)session.getAttribute("cartList");
 		// 검색된 장바구니 항목을 저장할 새로운 ArrayList 객체 생성.
-		ArrayList<Cart> cartList = new ArayList<Cart>();
+		ArrayList<Cart> cartList = new ArrayList<Cart>();
 
 		// 장바구니 목록을 반복하면서 검색 범위에 해당하는 장바구니 항목을 찾아서 새로 생성한 ArrayList 객체에 추가.
 		for (int i = 0; i < cartList.size(); i++) {
