@@ -1,5 +1,3 @@
-/*
-
 package action;
 
 import java.io.PrintWriter;
@@ -60,5 +58,3 @@ public class GoodsRegistAction implements Action {
 	}
 
 }
-
-*/

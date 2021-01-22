@@ -1,5 +1,3 @@
-/*
-
 package svc;
 
 // JdbcUtil 클래스에 static으로 정의되어 있는 속성과 메소드를 편리하게 사용하기 위해서 static import를 처리.
@@ -32,5 +30,3 @@ public class GoodsRegistService {
 	}
 
 }
-
-*/

@@ -1,5 +1,3 @@
-/*
-
 package action;
 
 import java.util.ArrayList;
@@ -42,5 +40,3 @@ public class GoodsListAction implements Action {
 
 	}
 }
-
-*/

@@ -1,5 +1,3 @@
-/*
-
 package action;
 
 import javax.servlet.http.Cookie;
@@ -29,5 +27,3 @@ public class GoodsViewAction implements Action {
 	}
 	
 }
-
-*/
