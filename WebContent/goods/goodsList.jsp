@@ -15,9 +15,9 @@
 <!-- 스타일 정의 태그. -->
 <style type="text/css">
 	#listForm{
-		width:700px;
-		height:500px;
-		border:1px solid red;
+		width:500px;
+		height:610px;
+		border:1px solid gray;
 		margin:auto;
 	}
 	h2{
@@ -26,11 +26,11 @@
 	
 	table{
 		margin:auto;
-		width:550px;
+		width:450px;
 	}
 
 	.div_empty{
-		background-color:red;
+		background-color:LightBlue;
 		width: 100%;
 		height: 100%;
 		text-align: center;

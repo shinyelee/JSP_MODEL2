@@ -9,8 +9,9 @@
 <title>Insert title here</title>
 <style type="text/css">
 	#listForm{
-		width:640px;
-		border:1px solid red;
+		width:500px;
+		height: 610px;
+		border:1px solid gray;
 		margin:auto;
 	}
 	h2{
@@ -36,21 +37,21 @@
 		text-align: center;
 	}
 	#desc{
-		height:170px;
-		background: skyblue;
+		height:80px;
+		background: SeaShell;
 	}
 </style>
 </head>
 <body>
 <section id = "listForm">
-<h2>${goods.kind}의 상세정보</h2>
+<h2>${goods.name}의 상세정보</h2>
 
 	<section id="content_main">
 		<section id = "content_left">
 			<img src="images/${goods.image}"/>
 		</section>
 		<section id = "content_right">
-			<b>제품 : </b> ${goods.name}<br>
+			<b>제품명 : </b> ${goods.name}<br>
 			<b>가격 : </b> ${goods.price}<br>
 			<b>대분류 : </b> ${goods.category}<br>
 			<b>소분류 : </b> ${goods.category2}<br>
