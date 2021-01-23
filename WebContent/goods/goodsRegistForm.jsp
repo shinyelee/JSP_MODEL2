@@ -38,10 +38,11 @@
 	<header>
 		<h2>상품정보등록</h2>
 	</header>
+	<!-- 등록 요청에 파일 업로드 요청이 존재하므로 enctype="multipart/form-data"를 지정해야 함. -->
 		<form action="goodsRegist.go" method="post" name = "writeForm" enctype="multipart/form-data">
 
 	<table>
-	<tr>
+	<tr><!-- 목록보기 요청 링크. -->
 		<td colspan="2"><a href="goodsList.go">목록보기</a></td>
 	</tr>
 	<tr>
