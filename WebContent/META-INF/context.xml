@@ -13,3 +13,10 @@
 		maxIdle="100"
 	/>
 </Context>
+	<!-- 코드 설명
+		name : 데이터베이스 작업을 하는 클래스에서 정의되는 Resource 객체를 얻어갈 때 사용하는 이름. 서버 상에 공유할 Resource의 타입을 지정.
+		type : DataSource 객체를 얻어가면 DataSource 객체에 getConnection()이라는 메소드를 사용해서 Connection 객체를 얻어갈 수 있음.
+		username, password, driverClassName : MySQL 데이터베이스에 연결할 수 있는 설정 정보를 정의.
+		factory : DataSource 객체를 생성해 주는Factory 클래스를 지정. Tomcat 8버전에 탑재돼있는 라이브러리 경로를 지정.
+		url : 연결할 MySQL url을 지정.
+		maxActive : 동시에 반환할 수 있는 Connection 객체 설정. -->
