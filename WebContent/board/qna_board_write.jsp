@@ -71,7 +71,7 @@ table {
 				</tr>
 			</table>
 			<section id="commandCell">
-				<input type="submit" value="등록">&nbsp;&nbsp; <input type="reset" value="다시쓰기" />
+				<input type="button" value="뒤로" onclick="history.back()">&nbsp;&nbsp;<input type="submit" value="등록">
 			</section>
 		</form>
 	</section>
