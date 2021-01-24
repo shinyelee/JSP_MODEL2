@@ -23,7 +23,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>MVC게시판</title>
+<title>QnA 게시판</title>
 <style type="text/css">
 /* 글쓰기 폼 영역의 스타일을 정의. */
 #registForm {
@@ -40,6 +40,7 @@ h2 {
 table {
 	margin: auto;
 	width: 450px;
+	background: SeaShell;
 }
 
 #tr_top {

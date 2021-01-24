@@ -14,8 +14,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>MVC 게시판</title>
+<title>QnA 게시판</title>
 <style type="text/css">
+a, a:hover {
+			color: #000000;
+			text-decoration: none;
+		}
 #articleForm {
 	width: 500px;
 	height: 500px;
@@ -27,20 +31,40 @@ h2 {
 	text-align: center;
 }
 
-#basicInfoArea {
-	height: 40px;
+table {
+	margin: auto;
+	width: 450px;
+}
+
+#titleInfoArea {
+	border: 1px solid white;
+	margin: auto;
+	background: LightBlue;
+	height: 24px;
+	width: 450px;
 	text-align: center;
+}
+
+#fileInfoArea {
+	border: 1px solid white;
+	margin: auto;
+	background: SeaShell;
+	height: 24px;
+	width: 450px;
+	text-align: left;
 }
 
 #articleContentArea {
-	background: LightBlue;
-	margin-top: 20px;
-	height: 350px;
-	text-align: center;
+	border: 1px solid white;
+	margin: auto;
+	background: SeaShell;
+	height: 295px;
+	width: 450px;
+	text-align: left;
 	overflow: auto;
 }
 
-#commandList {
+#buttonList {
 	margin: auto;
 	width: 500px;
 	text-align: center;
@@ -53,28 +77,33 @@ h2 {
 	<section id="articleForm">
 		<h2>글 내용 상세보기</h2>
 		<!-- 해당 게시판 글의 기본 데이터를 출력하는 영역이다. 글 내용 부분은 내용이 많아질 수 있으므로 별도의 섹션을 구분하여 출력한다. -->
-		<section id="basicInfoArea">
-			제 목 :
+		<section id="titleInfoArea">
 			<%=article.getBOARD_SUBJECT() %>
-			첨부파일 :
-			<%if(!(article.getBOARD_FILE() == null)) { %>
-			<a href="file_down?downFile=<%=article.getBOARD_FILE() %>"><%=article.getBOARD_FILE() %></a>
-			<%} %>
 		</section>
 		<!-- 이 부분은 스타일시트에서 overflow: auto; 속성을 지정하여 지정한 영역의 크기 이상이 출력되면 스크롤 처리하였다. -->
 		<section id="articleContentArea">
 			<%=article.getBOARD_CONTENT() %>
 		</section>
-	</section>
-	<section id="commandList">
-		<!-- 답변 요청을 링크. 파라미터로 답변할 대상 글의 번호와 페이지 번호를 전송한다. -->
-		<a href="boardReplyForm.bo?board_num=<%=article.getBOARD_NUM() %>&page=<%=nowPage%>">[답변]</a>
-		<!-- 수정 요청을 링크. 수정 처리 대상이 되는 글의 번호를 파라미터 값으로 전송한다. -->
-		<a href="boardModifyForm.bo?board_num=<%=article.getBOARD_NUM() %>">[수정]</a>
-		<!-- 삭제 요청을 링크. 삭제할 글의 번호와 현재 페이지 번호를 파라미터 값으로 전송한다. -->
-		<a href="boardDeleteForm.bo?board_num=<%=article.getBOARD_NUM() %>&page=<%=nowPage%>">[삭제]</a>
-		<!-- 목록 요청을 링크. -->
-		<a href="boardList.bo?page=<%=nowPage%>">[목록]</a>&nbsp;&nbsp;
+		<section id="fileInfoArea">
+			파일첨부
+			<%if(!(article.getBOARD_FILE() == null)) { %>
+			<a href="file_down?downFile=<%=article.getBOARD_FILE() %>"><%=article.getBOARD_FILE() %></a>
+			<%} %>
+		</section><br>
+		<section id="buttonList">
+			<button type="button"><!-- 답변 요청을 링크. 파라미터로 답변할 대상 글의 번호와 페이지 번호를 전송한다. -->
+				<a href="boardReplyForm.bo?board_num=<%=article.getBOARD_NUM() %>&page=<%=nowPage%>">답변</a>
+			</button>
+			<button type="button"><!-- 수정 요청을 링크. 수정 처리 대상이 되는 글의 번호를 파라미터 값으로 전송한다. -->
+				<a href="boardModifyForm.bo?board_num=<%=article.getBOARD_NUM() %>">수정</a>
+			</button>
+			<button type="button"><!-- 삭제 요청을 링크. 삭제할 글의 번호와 현재 페이지 번호를 파라미터 값으로 전송한다. -->
+				<a href="boardDeleteForm.bo?board_num=<%=article.getBOARD_NUM() %>&page=<%=nowPage%>">삭제</a>
+			</button>
+			<button type="button"><!-- 목록 요청을 링크. -->
+				<a href="boardList.bo?page=<%=nowPage%>">목록</a>
+			</button>
+		</section>
 	</section>
 </body>
 </html>

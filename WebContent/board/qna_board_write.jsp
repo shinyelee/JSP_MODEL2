@@ -7,9 +7,9 @@
 <title>QnA 게시판</title>
 <style type="text/css">
 /* 글쓰기 폼 영역의 스타일을 정의. */
-#registForm {
+#writeForm {
 	width: 500px;
-	height: 610px;
+	height: 500px;
 	border: 1px solid gray;
 	margin: auto;
 }
@@ -24,18 +24,19 @@ table {
 }
 
 /* 글쓰기 테이블 셀에 적용될 스타일을 지정. */
-.td_left {
+.td_center {
+	text-align: center;
 	width: 150px;
 	background: LightBlue;
 }
 
 .td_right {
-	width: 300px;
+	width: 350px;
 	background: SeaShell;
 }
 
 /* 등록 버튼이나 다시쓰기 버튼이 출력되는 영역의 스타일을 지정. */
-#commandCell {
+#buttonList {
 	text-align: center;
 }
 </style>
@@ -50,28 +51,28 @@ table {
 			<!-- required 속성이 주어진 입력 상자에 아무 값도 입력하지 않고 등록 버튼을 클릭하면 요청이 전송되지 않게 처리. -->
 			<table>
 				<tr>
-					<td class="td_left"><label for="BOARD_NAME">글쓴이</label></td>
+					<td class="td_center"><label for="BOARD_NAME">글쓴이</label></td>
 					<td class="td_right"><input type="text" name="BOARD_NAME" id="BOARD_NAME" required="required" /></td>
 				</tr>
 				<tr>
-					<td class="td_left"><label for="BOARD_PASS">비밀번호</label></td>
+					<td class="td_center"><label for="BOARD_PASS">비밀번호</label></td>
 					<td class="td_right"><input name="BOARD_PASS" type="password" id="BOARD_PASS" required="required" /></td>
 				</tr>
 				<tr>
-					<td class="td_left"><label for="BOARD_SUBJECT">제 목</label></td>
+					<td class="td_center"><label for="BOARD_SUBJECT">제 목</label></td>
 					<td class="td_right"><input name="BOARD_SUBJECT" type="text" id="BOARD_SUBJECT" required="required" /></td>
 				</tr>
 				<tr>
-					<td class="td_left"><label for="BOARD_CONTENT">내 용</label></td>
-					<td><textarea id="BOARD_CONTENT" name="BOARD_CONTENT" cols="40" rows="15" required="required"></textarea></td>
+					<td class="td_center"><label for="BOARD_CONTENT">내 용</label></td>
+					<td><textarea id="BOARD_CONTENT" name="BOARD_CONTENT" cols="50" rows="15" required="required"></textarea></td>
 				</tr>
 				<tr>
-					<td class="td_left"><label for="BOARD_FILE">파일첨부</label></td>
+					<td class="td_center"><label for="BOARD_FILE">파일첨부</label></td>
 					<td class="td_right"><input name="BOARD_FILE" type="file" id="BOARD_FILE" /></td>
 				</tr>
-			</table>
-			<section id="commandCell">
-				<input type="button" value="뒤로" onclick="history.back()">&nbsp;&nbsp;<input type="submit" value="등록">
+			</table><br>
+			<section id="buttonList">
+				<input type="button" value="뒤로" onclick="history.back()">&nbsp;<input type="submit" value="등록">
 			</section>
 		</form>
 	</section>

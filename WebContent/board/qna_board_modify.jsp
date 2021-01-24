@@ -13,7 +13,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>MVC 게시판</title>
+<title>QnA 게시판</title>
 <script type="text/javascript">
 function modifyboard() {
 	modifyform.submit();
