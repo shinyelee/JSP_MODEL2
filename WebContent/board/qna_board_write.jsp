@@ -8,9 +8,9 @@
 <style type="text/css">
 /* 글쓰기 폼 영역의 스타일을 정의. */
 a, a:hover {
-			color: #000000;
-			text-decoration: none;
-		}
+	color: #000000;
+	text-decoration: none;
+}
 		
 #writeForm {
 	width: 500px;

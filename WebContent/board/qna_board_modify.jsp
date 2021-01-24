@@ -20,9 +20,14 @@ function modifyboard() {
 }
 </script>
 <style type="text/css">
-#registForm { 
+a, a:hover {
+	color: #000000;
+	text-decoration: none;
+}
+
+#writeForm { 
 	width: 500px;
-	height: 600px;
+	height: 500px;
 	border: 1px solid gray; 
 	margin: auto; 
 }   
@@ -36,17 +41,26 @@ table {
 	width: 450px;
 }
 
-.td_left {
+.td_center {
+	text-align: center;
 	width: 150px;
 	background: LightBlue;
 }
 
 .td_right {
-	width: 300px;
+	width: 350px;
 	background: SeaShell;
 }
 
-#commandCell {
+#fileInfoArea {
+	border: 1px solid white;
+	margin: auto;
+	background: SeaShell;
+	height: 24px;
+	text-align: left;
+}
+
+#buttonList {
 	text-align: center;
 }
 </style>
@@ -54,29 +68,37 @@ table {
 <body>
 	<!-- 게시판 등록 -->
 	<section id="writeForm">
-		<h2>게시판글수정</h2>
+		<h2>글수정</h2>
 		<form action="boardModifyPro.bo" method="post" name="modifyform">
 			<input type="hidden" name="BOARD_NUM" value="<%=article.getBOARD_NUM() %>" />
 			<table>
 				<tr>
-					<td class="td_left"><label for="BOARD_NAME">글쓴이</label></td>
+					<td class="td_center"><label for="BOARD_NAME">글쓴이</label></td>
 					<td class="td_right"><input type="text" name="BOARD_NAME" id="BOARD_NAME" value="<%=article.getBOARD_NAME() %>" /></td>
 				</tr>
 				<tr>
-					<td class="td_left"><label for="BOARD_PASS">비밀번호</label></td>
+					<td class="td_center"><label for="BOARD_PASS">비밀번호</label></td>
 					<td class="td_right"><input name="BOARD_PASS" type="password" id="BOARD_PASS" /></td>
 				</tr>
 				<tr>
-					<td class="td_left"><label for="BOARD_SUBJECT">제 목</label></td>
+					<td class="td_center"><label for="BOARD_SUBJECT">제 목</label></td>
 					<td class="td_right"><input name="BOARD_SUBJECT" type="text" id="BOARD_SUBJECT" value="<%=article.getBOARD_SUBJECT() %>" /></td>
 				</tr>
 				<tr>
-					<td class="td_left"><label for = "BOARD_CONTENT">내 용</label></td>
-					<td><textarea id="BOARD_CONTENT" name="BOARD_CONTENT" cols="40" rows="15"><%=article.getBOARD_CONTENT() %></textarea></td>
+					<td class="td_center"><label for = "BOARD_CONTENT">내 용</label></td>
+					<td><textarea id="BOARD_CONTENT" name="BOARD_CONTENT" cols="50" rows="15"><%=article.getBOARD_CONTENT() %></textarea></td>
 				</tr>
-			</table>
-			<section id="commandCell">
-				<a href="javascript:modifyboard()">[수정]</a>&nbsp;&nbsp; <a href="javascript:history.go(-1)">[뒤로]</a>
+				<tr>
+					<td class="td_center"><label for="BOARD_FILE">파일첨부</label></td>
+					<td id="fileInfoArea">
+						<%if(!(article.getBOARD_FILE() == null)) { %>
+						<a href="file_down?downFile=<%=article.getBOARD_FILE() %>"><%=article.getBOARD_FILE() %></a>
+						<%} %>
+					</td>
+				</tr>
+			</table><br>
+			<section id="buttonList">
+				<input type="button" value="뒤로" onclick="history.back()">&nbsp;<input type="submit" value="수정">
 			</section>
 		</form>
 	</section>

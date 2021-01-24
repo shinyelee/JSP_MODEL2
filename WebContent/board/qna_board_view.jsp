@@ -17,9 +17,9 @@
 <title>QnA 게시판</title>
 <style type="text/css">
 a, a:hover {
-			color: #000000;
-			text-decoration: none;
-		}
+	color: #000000;
+	text-decoration: none;
+}
 		
 #articleForm {
 	width: 500px;
