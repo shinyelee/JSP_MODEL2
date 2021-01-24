@@ -8,7 +8,7 @@ import dao.GoodsDAO;
 // 굿즈 상품 상세 정보보기 요청을 처리하는 비즈니스 로직을 구현하는 Service 클래스.
 public class GoodsViewService {
 	
-	public Goods getDogView(int id) {
+	public Goods getGoodsView(int id) {
 		Connection con = getConnection();
 		GoodsDAO goodsDAO = GoodsDAO.getInstance();
 		goodsDAO.setConnection(con);
