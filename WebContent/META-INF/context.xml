@@ -10,7 +10,7 @@
 		factory="org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory"
 		url="jdbc:mysql://localhost:3306/testdb?serverTimezone=UTC"
 		maxActive="500"
-		maxIdle="100"
+		maxIdle="500"
 	/>
 </Context>
 	<!-- 코드 설명
@@ -19,4 +19,5 @@
 		username, password, driverClassName : MySQL 데이터베이스에 연결할 수 있는 설정 정보를 정의.
 		factory : DataSource 객체를 생성해 주는Factory 클래스를 지정. Tomcat 8버전에 탑재돼있는 라이브러리 경로를 지정.
 		url : 연결할 MySQL url을 지정.
-		maxActive : 동시에 반환할 수 있는 Connection 객체 설정. -->
+		maxActive : 동시에 반환할 수 있는 Connection 객체 설정.
+		maxIdle : 풀에서 최대 유휴 커넥션 수(maxActive==maxIdle 즉 반영구 커넥션 권장). Active>Idle이면 일부 커넥션 매번 생성하고 닫아야 함. -->
