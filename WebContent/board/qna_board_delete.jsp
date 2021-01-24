@@ -22,9 +22,14 @@
 <style>
 
 #passForm {
-	width: 400px;
+	width: 500px;
+	border: 1px solid gray;
 	margin: auto;
-	border : 1px solid gray;
+	text-align: center;
+}
+
+div {
+	padding: 2em;
 }
 	
 </style>
@@ -33,15 +38,11 @@
 	<section id="passForm">
 		<form name="deleteForm" action="boardDeletePro.bo?board_num=<%=board_num %>" method="post">
 			<input type="hidden" name="page" value="<%=nowPage %>"/>
-				<table>
-				<tr>
-					<td><label>글 비밀번호 : </label></td>
-					<td><input name="BOARD_PASS" type="password"></td>
-				</tr>
-				<tr>
-					<td><input type="submit" value="삭제"/>&nbsp;&nbsp; <input type="button" value="돌아가기" onClick="javascript:history.go(-1)"/></td>
-				</tr>
-		</table>
+			<div>비밀번호
+				<input name="BOARD_PASS" type="password" placeholder="비밀번호를 입력하세요."><br><br>
+				<input type="button" value="뒤로" onclick="history.back()">
+				<input type="submit" value="삭제">
+			</div>
 		</form>
 	</section>
 </body>
