@@ -40,7 +40,7 @@ public class BoardReplyProAction implements Action {
 			response.setContentType("text/html;charset=UTF-8");
 			PrintWriter out = response.getWriter();
 			out.println("<script>");
-			out.println("alert('답장실패');");
+			out.println("alert('답변글 등록에 실패했습니다.');");
 			out.println("history.back();");
 			out.println("</script>");
 		}

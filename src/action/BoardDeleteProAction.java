@@ -13,8 +13,10 @@ public class BoardDeleteProAction implements Action {
 	public ActionForward execute(HttpServletRequest request,HttpServletResponse response) throws Exception {
 		
 		ActionForward forward = null;
-		int board_num = Integer.parseInt(request.getParameter("board_num")); // 파라미터로 전송되어 오는 삭제 대상이 되는 글의 번호를 얻어옴.
-		String nowPage = request.getParameter("page"); // 글 삭제 요청을 처리한 후 원래 보던 페이지 목록으로 돌아가기 위해서 페이지 번호를 얻어옴.
+		// 파라미터로 전송되어 오는 삭제 대상이 되는 글의 번호를 얻어옴.
+		int board_num = Integer.parseInt(request.getParameter("board_num"));
+		// 글 삭제 요청을 처리한 후 원래 보던 페이지 목록으로 돌아가기 위해서 페이지 번호를 얻어옴.
+		String nowPage = request.getParameter("page");
 		BoardDeleteProService boardDeleteProService = new BoardDeleteProService();
 		// 삭제 요청을 한 사용자가 글을 작성한 사용자인지를 판단.
 		boolean isArticleWriter = boardDeleteProService.isArticleWriter(board_num, request.getParameter("BOARD_PASS"));
@@ -24,7 +26,7 @@ public class BoardDeleteProAction implements Action {
 			response.setContentType("text/html;charset=UTF-8");
 			PrintWriter out = response.getWriter();
 			out.println("<script>");
-			out.println("alert('삭제할 권한이 없습니다.');");
+			out.println("alert('삭제 권한이 없습니다.');");
 			out.println("history.back();");
 			out.println("</script>");
 			out.close();
@@ -38,7 +40,7 @@ public class BoardDeleteProAction implements Action {
 				response.setContentType("text/html;charset=UTF-8");
 				PrintWriter out = response.getWriter();
 				out.println("<script>");
-				out.println("alert('삭제실패');");
+				out.println("alert('삭제에 실패했습니다.');");
 				out.println("history.back();");
 				out.println("</script>");
 				out.close();

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>MVC게시판</title>
+<title>QnA 게시판</title>
 <style type="text/css">
 /* 글쓰기 폼 영역의 스타일을 정의. */
 #registForm {
@@ -43,7 +43,7 @@ table {
 <body>
 	<!-- 게시판글등록. -->
 	<section id="writeForm">
-		<h2>게시판글등록</h2>
+		<h2>글쓰기</h2>
 		<!-- 게시판 글 등록 시 파일업로드 기능도 처리하므로 enctype="multipart/form-data" 부분을 지정. 이 entype 속성이 지정되어야 업로드하는 파일이 서버로 제대로 전송된다. -->
 		<form action="boardWritePro.bo" method="post" enctype="multipart/form-data" name="boardform">
 			<!-- 각 입력상자마다 label 태그를 사용하여 레이블을 클릭할 때 레이블에 해당하는 데이터를 입력하는 입력상자로 커서가 이동하게 처리. -->
@@ -66,7 +66,7 @@ table {
 					<td><textarea id="BOARD_CONTENT" name="BOARD_CONTENT" cols="40" rows="15" required="required"></textarea></td>
 				</tr>
 				<tr>
-					<td class="td_left"><label for="BOARD_FILE">파일 첨부</label></td>
+					<td class="td_left"><label for="BOARD_FILE">파일첨부</label></td>
 					<td class="td_right"><input name="BOARD_FILE" type="file" id="BOARD_FILE" /></td>
 				</tr>
 			</table>

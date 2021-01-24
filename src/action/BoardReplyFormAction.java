@@ -14,11 +14,14 @@ public class BoardReplyFormAction implements Action {
 		
 		ActionForward forward = new ActionForward();
 		String nowPage = request.getParameter("page");
-		int board_num = Integer.parseInt(request.getParameter("board_num")); // 답변글 등록 처리를 한 후 원래 보던 페이지로 되돌아 가야 하기 때문에 파라미터로 전송되어오는 페이지 번호 값을 얻어옴.
+		// 답변글 등록 처리를 한 후 원래 보던 페이지로 되돌아 가야 하기 때문에 파라미터로 전송되어오는 페이지 번호 값을 얻어옴.
+		int board_num = Integer.parseInt(request.getParameter("board_num"));
 		BoardDetailService boardDetailService = new BoardDetailService();
-		BoardBean article = boardDetailService.getArticle(board_num); // 답변글을 달아줄 대상 글의 정보를 얻어옴.
-		request.setAttribute("article", article); // 글 정보와
-		request.setAttribute("page", nowPage); // 페이지 번호를 request 영역에 속성으로 공유.
+		// 답변글을 달아줄 대상 글의 정보를 얻어옴.
+		BoardBean article = boardDetailService.getArticle(board_num);
+		// 글 정보와 페이지 번호를 request 영역에 속성으로 공유.
+		request.setAttribute("article", article);
+		request.setAttribute("page", nowPage);
 		forward.setPath("/board/qna_board_reply.jsp");
 		return forward;
 

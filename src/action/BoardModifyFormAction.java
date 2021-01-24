@@ -13,7 +13,8 @@ public class BoardModifyFormAction implements Action {
 	public ActionForward execute(HttpServletRequest request,HttpServletResponse response) throws Exception {
 		
 		ActionForward forward = new ActionForward();
-		int board_num = Integer.parseInt(request.getParameter("board_num")); // 파라미터로 전송되어 오는 수정 대상이 되는 글의 번호를 받음.
+		// 파라미터로 전송되어 오는 수정 대상이 되는 글의 번호를 받음.
+		int board_num = Integer.parseInt(request.getParameter("board_num"));
 		BoardDetailService boardDetailService = new BoardDetailService();
 		// 수정 대상이 되는 글의 정보를 반환하는 메소드 호출. 수정폼에는 해당 글의 이전 정보를 출력해 주고 새로운 정보를 입력 받아야 함.
 		BoardBean article = boardDetailService.getArticle(board_num);

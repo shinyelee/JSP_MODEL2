@@ -13,10 +13,12 @@ public class BoardDAO {
 
 	DataSource ds;
 	Connection con;
-	private static BoardDAO boardDAO; // 외부 클래스에서 BoardDAO 변수에 직접 접근할 수 없도록 접근 제한자를 private으로 지정함.
+	// 외부 클래스에서 BoardDAO 변수에 직접 접근할 수 없도록 접근 제한자를 private으로 지정함.
+	private static BoardDAO boardDAO;
 
+	// 외부 클래스에서 생성자를 사용해서 객체를 새로 생성할 수 없도록 생성자의 접근 제한자를 private으로 지정함.
 	private BoardDAO() {
-		// 외부 클래스에서 생성자를 사용해서 객체를 새로 생성할 수 없도록 생성자의 접근 제한자를 private으로 지정함.
+
 	}
 	
 	// 싱글톤 패턴으로 BoardDAO 객체를 생성해서 리턴해 주는 메소드를 정의.

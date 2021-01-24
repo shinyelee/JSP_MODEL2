@@ -31,14 +31,17 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet {
 		String contextPath=request.getContextPath(); // 요청
 		String command=RequestURI.substring(contextPath.length()); // 파악.
 		System.out.println(command);
-		ActionForward forward=null; // 각 Action 클래스 객체의 execute 메소드를 실행한 후 반환되는 ActionForward 객체를 저장할 변수를 정의.
-		Action action=null; // 각 요청을 처리하는 Action 클래스 객체를 다형성을 사용해서 참조하는 변수를 정의.
+		// 각 Action 클래스 객체의 execute 메소드를 실행한 후 반환되는 ActionForward 객체를 저장할 변수를 정의.
+		ActionForward forward=null;
+		// 각 요청을 처리하는 Action 클래스 객체를 다형성을 사용해서 참조하는 변수를 정의.
+		Action action=null;
 		
 		// 각 요청에 대항하는 Action 클래스 객체를 실행.
 		// 각 Action 객체를 실행하면 forward 변수에 각 액션 객체에서 반환된 ActionForward 객체가 참조됨.
-		if(command.equals("/boardWriteForm.bo")) { // 글쓰기 페이지를 열어주는 요청 같은 경우는
-			forward=new ActionForward(); // 특별한 비즈니스 로직을 실행할 필요 없이
-			forward.setPath("/board/qna_board_write.jsp"); // <- 포워딩될 페이지만 지정하면 됨.
+		if(command.equals("/boardWriteForm.bo")) {
+			// 글쓰기 페이지를 열어주는 요청 같은 경우는 특별한 비즈니스 로직을 실행할 필요 없이 setPath로 포워딩될 페이지만 지정하면 됨.
+			forward=new ActionForward();
+			forward.setPath("/board/qna_board_write.jsp");
 		} else if(command.equals("/boardWritePro.bo")) {
 			action = new BoardWriteProAction();
 			try {
@@ -95,14 +98,17 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet {
 				e.printStackTrace();
 			}
 		}
-		else if(command.equals("/boardDeleteForm.bo")) { // 게시판 글 하나를 삭제한 후 원래 보던 목록 보기 페이지로 되돌아 가야 하기 때문에
-			String nowPage = request.getParameter("page"); // 게시판 삭제를 위해서 비밀번호를 입력하는 페이지(qna_board_delete.jsp)로
-			request.setAttribute("page", nowPage); // <- 페이지 번호를 공유한다.
+		else if(command.equals("/boardDeleteForm.bo")) {
+			// 게시판 글 하나를 삭제한 후 원래 보던 목록 보기 페이지로 되돌아 가야 하기 때문에
+			// 게시판 삭제를 위해서 비밀번호를 입력하는 페이지로 페이지 번호를 공유한다(setAttribute).
+			// 이 페이지 번호는 글 상세 내용을 본 후 삭제 버튼을 눌렀을 때 파라미터로 전송됨.
+			String nowPage = request.getParameter("page");
+			request.setAttribute("page", nowPage);
 				int board_num=Integer.parseInt(request.getParameter("board_num"));
 				request.setAttribute("board_num", board_num);
 				forward=new ActionForward();
 				forward.setPath("/board/qna_board_delete.jsp");
-		} // 이 페이지 번호는 글 상세 내용을 본 후 삭제 버튼을 눌렀을 때 파라미터로 전송됨.
+		}
 		else if(command.equals("/boardDeletePro.bo")) {
 			action = new BoardDeleteProAction();
 			try {

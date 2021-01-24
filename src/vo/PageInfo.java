@@ -1,12 +1,12 @@
 package vo;
 
-//페이징 처리 관련 정보를 저장하는 클래스.
+// 페이징 처리 관련 정보를 저장하는 클래스.
 public class PageInfo {
 	
-	private int page; // 페이지(번호).
+	private int page; // 페이지 기본값.
 	private int maxPage; // 총 페이지.
-	private int startPage; // 시작 페이지.
-	private int endPage; // 마지막 페이지.
+	private int startPage; // 시작 페이지 번호.
+	private int endPage; // 마지막 페이지 번호.
 	private int listCount; // 총 글의 개수.
 	
 	// alt+shift+s -> r(Generate Getters and Setters) -> Select All -> OK.
