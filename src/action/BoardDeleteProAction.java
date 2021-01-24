@@ -26,7 +26,7 @@ public class BoardDeleteProAction implements Action {
 			response.setContentType("text/html;charset=UTF-8");
 			PrintWriter out = response.getWriter();
 			out.println("<script>");
-			out.println("alert('삭제 권한이 없습니다.');");
+			out.println("alert('비밀번호가 올바르지 않습니다.');");
 			out.println("history.back();");
 			out.println("</script>");
 			out.close();
