@@ -69,16 +69,27 @@ table {
 }
 </style>
 <script>
+/*	장바구니 항목 삭제 요청을 할 때 삭제할 항목을 체크 박스로 선택한다.
+	체크박스를 하나씩 체크할 수도 있지만 전체선택(상단 체크박스 하나로 모든 하위 체크박스 선택 및 해제) 기능도 필요하기 때문에 자바스크립트 처리함.
+	이 함수 영역은 onclick="checkAll(this.form)"부분에서 allCheck 체크박스를 클릭할 때 실행함.
+	checkAll 함수를 호출하면서 form 객체를 인자값으로 전송. */
 	function checkAll(theForm){
+	/*	장바구니 항목이 하나가 출력되었을 경우 처리되는 부분.
+		theForm은 인자로 전달된 form 객체이며 remove는 각 장바구니 항목을 선택하는 체크박스.
+		페이지에 remove라는 이름의 체크 박스가 하나 출력되면 단일 객체로 인식하지만 여러 개가 출력되면 배열 객체로 인식.
+		length 속성은 자바스크립트에서 배열 객체에 지원되는 속성이므로 theForm.remove.length==undefined라는 조건을 만족할 경우
+		remove 객체가 배열 객체가 아님 -> remove 체크 박스가 하나 출력됐다는 의미. */	
 		if(theForm.remove.length == undefined){
+		/*	체크박스가 선택되었으면 true, 아니면 false 반환. */
 			theForm.remove.checked = theForm.allCheck.checked;
+	/*	장바구니 항목을 선택하는 체크박스가 여러 개 출력(장바구니 항목이 여러개)됐을 경우 처리. */
 		}else{
 			for(var i=0;i<theForm.remove.length;i++){
 				theForm.remove[i].checked = theForm.allCheck.checked;
 			}
 		}
 	}
-	
+/*	장바구니 항목 수량 감소 요청을 할 때 현재 수량이 1이 아닐 경우(1에서 0으로 줄이려면 -> 삭제)만 수량 감소 요청을 하게 처리한 함수. */
 	function checkQty(name,qty){
 		if(qty != 1){
 			location.href="goodsCartQtyDown.go?name="+ encodeURIComponent(name);
@@ -87,6 +98,8 @@ table {
 </script>
 </head>
 <body>
+<!-- 검색에 사용되는 startMoney 값과 endMoney 값을 속성으로 설정. -->
+<!-- null값인 경우(검색 작업을 하지 않고 목록포기 페이지가 실행됨) NullPointerException이 발생하지 않도록 처리. -->
 <c:if test="${startMoney !=null }">
 	<c:set var="startMoney" value="${startMoney}"></c:set>
 </c:if>
@@ -98,6 +111,7 @@ table {
    <h2>장바구니 목록</h2>
 <form method="post">
 	<table>
+		<!-- 가격별 검색부분 처리. -->
 		<tr id="select">
 			<td colspan="6">
 			<select id = "startMoney" name="startMoney">
@@ -184,12 +198,16 @@ table {
 		<c:forEach var="cart" items="${cartList }" varStatus="status">
 		<tr>
 			<td><input type="checkbox" id="remove" name="remove" value="${cart.name }"/></td>
+			<!-- 번호값계산 -> status.index 속성을 하용하면 forEach 문이 실행되는 인덱스 번호 반환. -->
+			<!-- 한 번 실행될 때 0, 두 번째 실행될 때 1 반환. -->
 			<td>${status.index+1}</td>
 			<td><img src = "images/${cart.image }" id ="cartImage"/></td>
 			<td>${cart.name }</td>
 			<td>${cart.price }</td>
-			<td><a href="goodsCartQtyUp.go?name=${cart.encodingName }"><img src="images/up.jpg" id = "upImage" border=0/></a><br>
+			<td><!-- 장바구니 항목 수량 증가 요청. -->
+				<a href="goodsCartQtyUp.go?name=${cart.encodingName }"><img src="images/up.jpg" id = "upImage" border=0/></a><br>
 				${cart.qty }<br>
+				<!-- 장바구니 항목 수량 감소 요청. -->
 				<a href="javascript:checkQty('${cart.name}',${cart.qty})"><img src="images/down.jpg" id = "downImage" border=0/></a></td>
 		</tr>
 		</c:forEach>
