@@ -20,6 +20,7 @@ a, a:hover {
 			color: #000000;
 			text-decoration: none;
 		}
+		
 #articleForm {
 	width: 500px;
 	height: 500px;
