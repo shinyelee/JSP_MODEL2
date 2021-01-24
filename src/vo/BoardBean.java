@@ -2,15 +2,15 @@ package vo;
 
 import java.sql.Date;
 
-//게시판글 하나의 정보를 저장하는 클래스.
+// 게시판글 하나의 정보를 저장하는 클래스.
 public class BoardBean {
 	
-	private int BOARD_NUM; // 글 번호.
-	private String BOARD_NAME; // 글 작성자.
-	private String BOARD_PASS; // 글 비밀번호.
-	private String BOARD_SUBJECT; // 글 제목.
-	private String BOARD_CONTENT; // 글 내용.
-	private String BOARD_FILE; // 첨부 파일.
+	private int BOARD_NUM; // 글 번호. PK
+	private String BOARD_NAME; // 글 작성자. varchar(20)
+	private String BOARD_PASS; // 글 비밀번호. varchar(15)
+	private String BOARD_SUBJECT; // 글 제목. varchar(50)
+	private String BOARD_CONTENT; // 글 내용. varchar(2000)
+	private String BOARD_FILE; // 첨부 파일. varchar(50)
 	private int BOARD_RE_REF; // 관련글 번호.
 	private int BOARD_RE_LEV; // 답글 레벨.
 	private int BOARD_RE_SEQ; // 관련글 중 출력 순서.
