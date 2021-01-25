@@ -70,6 +70,7 @@ table {
 	width: 500px;
 	text-align: center;
 }
+
 </style>
 </head>
 

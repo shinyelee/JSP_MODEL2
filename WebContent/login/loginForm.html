@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>로그인</title>
+<style>
+a, a:hover {
+	color: #000000;
+	text-decoration: none;
+}
+
+#passForm { 
+	width: 500px;
+	height : 200px;
+	border: 1px solid gray; 
+	margin: auto;
+	text-align: center;
+}
+
+fieldset{
+	text-align: center;
+	border : none;
+}
+
+h2 {
+	text-align: center; 
+}
+
+table {
+	width: 300px;
+	margin: auto;
+}
+
+.td_center {
+	text-align: center;
+	width: 80px;
+}
+
+.td_right {
+	text-align: left;
+	width: 220px;
+}
+
+#buttonList {
+	text-align: center;
+}
+</style>
+</head>
+<body>
+	
+	<section id="passForm">
+		<h2>로그인</h2>
+		<form action="login" method="post">
+			<table>
+				<tr>
+					<td class="td_center"><label for="id">아 이 디</label></td>
+					<td class="td_right"><input type="text" name="id" id="id" placeholder="아이디를 입력하세요." required="required"></td>
+				</tr>
+				<tr>
+					<td class="td_center"><label for="passwd">비밀번호</label></td>
+					<td class="td_right"><input type="password" name="passwd" id="passwd" placeholder="비밀번호를 입력하세요." required="required"></td>
+				</tr>
+			</table><br>
+			<input type="submit" value="로그인" id="selectButton">
+		</form>
+	</section>
+	
+</body>
+</html>

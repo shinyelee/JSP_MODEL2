@@ -36,6 +36,7 @@ div {
 </head>
 <body>
 	<section id="passForm">
+		<h2>비밀번호 확인</h2>
 		<form name="deleteForm" action="boardDeletePro.bo?board_num=<%=board_num %>" method="post">
 			<input type="hidden" name="page" value="<%=nowPage %>"/>
 			<div>비밀번호
