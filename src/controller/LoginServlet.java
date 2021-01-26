@@ -1,4 +1,4 @@
-// 로그인 요청을 처리하는 서블릿 페이지 p.658(188/362)
+// 로그인 요청을 처리하는 서블릿 페이지
 package controller;
 
 import java.io.IOException;
