@@ -37,16 +37,21 @@ public class LoginDAO {
 		this.con = con;
 	}
 	
+	// 사용자가 입력한 아이디와 비밀번호를 사용해 로그인 처리를 수행한 후
+	// 로그인에 성공하면 사용자의 정보를 Member 객체에 저장해 반환하고,
+	// 로그인에 실패하면 null을 반환하는 메소드 정의.
 	public Member selectLoginMember(String id, String passwd) {
 		Member loginMember = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		try {
+			// 사용자가 입력한 아이디와 비밀번호를 가진 회원의 모든 컬럼 값을 가져오는 SQL 구문 실행.
 			pstmt = con.prepareStatement("SELECT * FROM users WHERE id = ? AND passwd = ?");
 			pstmt.setString(1, id);
 			pstmt.setString(2, passwd);
 			rs = pstmt.executeQuery();
 			if(rs.next()) {
+				// 위에서 조회한 회원정보를 Member 객체의 속성 값으로 설정.
 				loginMember = new Member();
 				loginMember.setAddr(rs.getString("addr"));
 				loginMember.setAge(rs.getInt("age"));
