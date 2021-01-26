@@ -1,4 +1,3 @@
-// 로그인 비즈니스 로직 처리
 package svc;
 
 import static db.JdbcUtil.*;
@@ -6,6 +5,7 @@ import java.sql.Connection;
 import dao.LoginDAO;
 import vo.Member;
 
+// 로그인 비즈니스 로직 처리
 public class LoginService {
 
 	public Member getLoginMember(String id, String passwd) {

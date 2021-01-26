@@ -1,4 +1,3 @@
-// 데이터베이스에 로그인 관련 SQL 구문을 전송
 package dao;
 
 import java.sql.Connection;
@@ -7,6 +6,7 @@ import java.sql.ResultSet;
 import vo.Member;
 import static db.JdbcUtil.*;
 
+// 데이터베이스에 로그인 관련 SQL 구문을 전송
 public class LoginDAO {
 	
 	// LoginDAO 타입의 레퍼런스 변수 선언.
@@ -53,14 +53,13 @@ public class LoginDAO {
 			if(rs.next()) {
 				// 위에서 조회한 회원정보를 Member 객체의 속성 값으로 설정.
 				loginMember = new Member();
+				loginMember.setId(rs.getString("id"));
+				loginMember.setPasswd(rs.getString("passwd"));
 				loginMember.setAddr(rs.getString("addr"));
-				loginMember.setAge(rs.getInt("age"));
 				loginMember.setEmail(rs.getString("email"));
 				loginMember.setGender(rs.getString("gender"));
-				loginMember.setId(rs.getString("id"));
 				loginMember.setName(rs.getString("name"));
-				loginMember.setNation(rs.getString("nation"));
-				loginMember.setPasswd(rs.getString("passwd"));
+				loginMember.setMobile(rs.getString("mobile"));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

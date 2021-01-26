@@ -1,4 +1,3 @@
-// 로그인 요청을 처리하는 서블릿 페이지
 package controller;
 
 import java.io.IOException;
@@ -12,6 +11,7 @@ import javax.servlet.http.HttpSession;
 import svc.LoginService;
 import vo.Member;
 
+// 로그인 요청을 처리하는 서블릿 페이지
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;

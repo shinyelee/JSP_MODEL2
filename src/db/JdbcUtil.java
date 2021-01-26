@@ -23,6 +23,7 @@ public class JdbcUtil {
 			con = ds.getConnection();
 			// Connection 객체에 트랜잭션을 적용.
 			con.setAutoCommit(false);
+			System.out.println("connect success");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
