@@ -20,7 +20,7 @@ public class MdDAO {
 	}
 	
 	// 데이터베이스 작업을 하기 위해서 필요한 Connection 객체를 멤버 변수 값으로 설정.
-	public void setConnection(Connection con){
+	public void setConnection(Connection con) {
 		this.con = con;
 	}
 	
@@ -28,9 +28,9 @@ public class MdDAO {
 	// 첫 번째 요청에서만 객체를 생성해주고 다음에 객체를 사용할 때는 처음 생성된 객체의 레퍼런스 값을 공유.
 	// 생성자의 접근 제한자를 private으로 지정했으므로 외부 클래스에서 GoodsDAO 객체의 레퍼런스 값을 얻어갈 땐
 	// 반드시 getInstance() 메소드를 호출해서 얻어가야 함.
-	public static MdDAO getInstance(){
+	public static MdDAO getInstance() {
 		
-		if(boardDAO == null){
+		if(boardDAO == null) {
 		   boardDAO = new MdDAO();
 		}
 		
@@ -47,7 +47,7 @@ public class MdDAO {
 			pstmt = con.prepareStatement("SELECT * FROM md");
 			rs = pstmt.executeQuery();
 			
-			if(rs.next()){
+			if(rs.next()) {
 				mdList = new ArrayList<Md>();
 				
 				do {
@@ -86,7 +86,7 @@ public class MdDAO {
 			pstmt.setInt(1, mdid);
 			rs = pstmt.executeQuery();
 			
-			if(rs.next()){
+			if(rs.next()) {
 				md = new Md(
 						 rs.getInt("mdid")
 						,rs.getString("item")
