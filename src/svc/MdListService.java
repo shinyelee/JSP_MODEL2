@@ -13,9 +13,10 @@ public class MdListService {
 		MdDAO mdDAO = MdDAO.getInstance();
 		Connection con = getConnection();
 		mdDAO.setConnection(con);
-		// 굿즈 상품 목록을 ArrayList 객체 타입으로 반환하는 메소드를 호출.
+		// 상품 목록을 ArrayList 객체 타입으로 반환하는 메소드를 호출.
 		ArrayList<Md> mdList = mdDAO.selectMdList();
 		close(con);
+		
 		return mdList;
 	}
 	

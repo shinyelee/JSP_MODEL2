@@ -13,7 +13,7 @@ public class MdDAO {
 	private static MdDAO boardDAO;
 	
 	// 생성자의 접근 제한자를 외부 클래스에서 직접 호출할 수 없도록 private으로 지정.
-	// (외부 클래스에서 GoodsDAO 객체의 메소드를 사용할 때마다 객체를 계속 생성하지 않고
+	// (외부 클래스에서 MdDAO 객체의 메소드를 사용할 때마다 객체를 계속 생성하지 않고
 	// 싱글톤 패턴을 사용해 처음 생성된 객체를 공유해서 사용하도록 처리하기 위해서임.)	
 	private MdDAO() {
 		
@@ -24,9 +24,9 @@ public class MdDAO {
 		this.con = con;
 	}
 	
-	// 외부 클래스에서 GoodsDAO 클래스에 정의된 메소드를 사용하기 위해 객체를 얻어갈 때
+	// 외부 클래스에서 MdDAO 클래스에 정의된 메소드를 사용하기 위해 객체를 얻어갈 때
 	// 첫 번째 요청에서만 객체를 생성해주고 다음에 객체를 사용할 때는 처음 생성된 객체의 레퍼런스 값을 공유.
-	// 생성자의 접근 제한자를 private으로 지정했으므로 외부 클래스에서 GoodsDAO 객체의 레퍼런스 값을 얻어갈 땐
+	// 생성자의 접근 제한자를 private으로 지정했으므로 외부 클래스에서 MdDAO 객체의 레퍼런스 값을 얻어갈 땐
 	// 반드시 getInstance() 메소드를 호출해서 얻어가야 함.
 	public static MdDAO getInstance() {
 		
