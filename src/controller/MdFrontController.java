@@ -59,45 +59,40 @@ public class MdFrontController extends HttpServlet {
 		// 2. 각 요청별로 비지니스로직 호출
 		// 파악된 각 요청(command)에 대해서 각 Action 클래스 객체의 execute 메소드를 다형성을 이용해서 호출하여
 		// 비즈니스 로직을 처리하고 포워딩에 관련된 정보를 ActionForward 타입으로 반환받음.
-		if(command.equals("/mdList.md")){
+		if(command.equals("/mdList.md")) {
 			action = new MdListAction();
-			//프로젝트명 + 기능 + 형태(?)
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
-		else if(command.equals("/mdView.md")){
+		else if(command.equals("/mdView.md")) {
 			action = new MdViewAction();
-			//프로젝트명 + 기능 + 형태(?)
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
-		else if(command.equals("/mdCartAdd.md")){
+		else if(command.equals("/mdCartAdd.md")) {
 			action = new MdCartAddAction();
-			//프로젝트명 + 기능 + 형태(?)
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
-		else if(command.equals("/mdCartList.md")){
+		else if(command.equals("/mdCartList.md")) {
 			action = new MdCartListAction();
-			//프로젝트명 + 기능 + 형태(?)
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
-		else if(command.equals("/mdCartSearch.md")){
+		else if(command.equals("/mdCartSearch.md")) {
 			action = new MdCartSearchAction();
-			//프로젝트명 + 기능 + 형태(?)
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
@@ -106,41 +101,37 @@ public class MdFrontController extends HttpServlet {
 		}
 		else if(command.equals("/mdCartRemove.md")){
 			action = new MdCartRemoveAction();
-			//프로젝트명 + 기능 + 형태(?)
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
-		else if(command.equals("/mdCartQtyUp.md")){
+		else if(command.equals("/mdCartQtyUp.md")) {
 			action = new MdCartQtyUpAction();
-			//프로젝트명 + 기능 + 형태(?)
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
-		else if(command.equals("/mdCartQtyDown.md")){
+		else if(command.equals("/mdCartQtyDown.md")) {
 			action = new MdCartQtyDownAction();
-			//프로젝트명 + 기능 + 형태(?)
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
-		else if(command.equals("/mdRegist.md")){
+		else if(command.equals("/mdRegist.md")) {
 			action = new MdRegistAction();
-			//프로젝트명 + 기능 + 형태(?)
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
-		else if(command.equals("/mdRegistForm.md")){
+		else if(command.equals("/mdRegistForm.md")) {
 			action = new MdRegistFormAction();
 			try {
 				forward = action.execute(request, response);
@@ -148,14 +139,14 @@ public class MdFrontController extends HttpServlet {
 				e.printStackTrace();
 			}
 		}
-		//3. 포워딩
+		// 3. 포워딩
 		// 각 Action 클래스 객체에서 반환된 forward 객체 정보를 사용하여 포워딩 처리.
-		if(forward !=null){
+		if(forward !=null) {
 			// 포워딩 방식이 리다이렉트로 설정되어있으면 리다이렉트 방식으로,
-			if(forward.isRedirect()){
+			if(forward.isRedirect()) {
 				response.sendRedirect(forward.getPath());
 			// 디스패치로 설정되어있으면 디스패치 방식으로.
-			}else{
+			} else {
 				RequestDispatcher dispatcher = request.getRequestDispatcher(forward.getPath());
 				dispatcher.forward(request, response);
 				
