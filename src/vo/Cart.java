@@ -1,12 +1,15 @@
 package vo;
 
+import java.net.URLEncoder;
+
 // 장바구니 항목 하나의 정보를 저장하는 클래스.
 public class Cart {
 
-	private String image; // 상품 이미지.
-	private String name; // 상품명.
-	private int price; // 상품 가격.
-	private int qty; // 상품 수량.
+	private String image; // 상품이미지
+	private String item;  // 상품명
+	private int price;	  // 가격
+	private int qty;	  // 수량
+	private String encodingItem;
 	
 	// alt+shift+s -> r(Generate Getters and Setters) -> Select All -> OK.
 	public String getImage() {
@@ -17,12 +20,12 @@ public class Cart {
 		this.image = image;
 	}
 	
-	public String getName() {
-		return name;
+	public String getItem() {
+		return item;
 	}
 	
-	public void setName(String name) {
-		this.name = name;
+	public void setItem(String item) {
+		this.item = item;
 	}
 	
 	public int getPrice() {
@@ -39,6 +42,20 @@ public class Cart {
 	
 	public void setQty(int qty) {
 		this.qty = qty;
+	}
+	
+	public String getEncodingItem() {
+		try {
+			encodingItem = URLEncoder.encode(item, "UTF-8");
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		return encodingItem;
+	}
+	
+	public void setEncodingItem(String encodingItem) {
+		this.encodingItem = encodingItem;
 	}
 
 }
