@@ -1,5 +1,6 @@
 <!-- 인덱스 페이지. -->
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,14 +19,15 @@
 <%	// 현재 세션 영역에 "id"라는 이름으로 저장돼 있는 속성 값을 얻어옴.
 	String id = (String)session.getAttribute("id");
 	// 현재 세션 영역에 "id"라는 이름의 속성 값이 저장이 안 돼 있으면(=로그아웃 상태) "로그인" 링크 출력.
-	if(id == null) {
+	if(id != null) {
 %>
-	<a href="loginForm.html">로그인</a>
+	<a href="logout">로그아웃</a>
+	<a href="loginSuccess.jsp">내정보</a>
 <%
 	} // "id"라는 이름의 속성 값이 저장되어 있으면(=로그인 상태) "로그아웃" 링크 출력.
 	else {
 %>
-	<a href="logout">로그아웃</a>
+	<a href="loginForm.html">로그인</a>
 <%
 	}
 %>

@@ -8,7 +8,7 @@
 </head>
 <body>
 
-	<!-- index.jsp 페이지를 실행하면 "/login" 서블릿을 매핑하는 서블릿으로 포워딩함. -->
+	<!-- index.jsp 페이지를 실행하면 "/login" 서블릿을 매핑하는 서블릿으로 포워딩함.-->
 	<jsp:forward page="/login"></jsp:forward>
 
 </body>

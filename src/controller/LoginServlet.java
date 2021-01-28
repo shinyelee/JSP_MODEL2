@@ -61,8 +61,8 @@ public class LoginServlet extends HttpServlet {
 			// 로그인에 성공하면 사용자의 정보를 Member 객체의 속성 값으로 설정해 반환함.
 			if(loginMember != null) {
 				// 사용자 시스템의 쿠키 정보에 로그인에 성공한 아이디와 비밀번호가 저장돼 있음
-				// -> request 영역에 로그인에 성공한 사용자의 정보를 Member 객체 타입으로 공유하고 "loginSuccess.jsp" 페이지로 포워딩함.
-				RequestDispatcher dispatcher = request.getRequestDispatcher("loginSuccess.jsp");
+				// -> request 영역에 로그인에 성공한 사용자의 정보를 Member 객체 타입으로 공유하고 "main.jsp" 페이지로 포워딩함.
+				RequestDispatcher dispatcher = request.getRequestDispatcher("main.jsp");
 				request.setAttribute("loginMember", loginMember);
 				dispatcher.forward(request, response);
 			}
@@ -71,6 +71,11 @@ public class LoginServlet extends HttpServlet {
 				// 사용자 시스템에 로그인 정보가 없음 -> 다시 로그인 화면으로 돌려보냄.
 				RequestDispatcher dispatcher = request.getRequestDispatcher("loginForm.html");
 				dispatcher.forward(request, response);
+				PrintWriter out = response.getWriter();
+				out.println("<script>");
+				out.println("alert('로그인에 실패했습니다.')");
+				out.println("history.back()");
+				out.println("</script>");
 			}
 		}
     }
@@ -103,24 +108,29 @@ public class LoginServlet extends HttpServlet {
 		
 		// 로그인 성공.
 		if(loginMember != null) {
-			RequestDispatcher dispatcher = request.getRequestDispatcher("loginSuccess.jsp");
-			request.setAttribute("loginMember", loginMember);
-			dispatcher.forward(request, response);		
-//			HttpSession session = request.getSession();
-//			session.setAttribute("id", id);
-//			// index.jsp 페이지로 리다이렉트.
-//			response.sendRedirect("index.jsp");
+			
+			HttpSession session = request.getSession();
+			session.setAttribute("id", id);
+			// index.jsp 페이지로 리다이렉트.
+			response.sendRedirect("main.jsp");
+			
+//			RequestDispatcher dispatcher = request.getRequestDispatcher("main.jsp");
+//			request.setAttribute("loginMember", loginMember);
+//			dispatcher.forward(request, response);
 		}
 		// 로그인 실패.
 		else {
-			RequestDispatcher dispatcher = request.getRequestDispatcher("loginFail.jsp");
-			dispatcher.forward(request, response);
-//			response.setContentType("text/html;charset=UTF-8");
-//			PrintWriter out = response.getWriter();
-//			out.println("<script>");
-//			out.println("alert('로그인에 실패했습니다.')");
-//			out.println("history.back()");
-//			out.println("</script>");
+			
+			response.setContentType("text/html;charset=UTF-8");
+			PrintWriter out = response.getWriter();
+			out.println("<script>");
+			out.println("alert('로그인에 실패했습니다.')");
+			out.println("history.back()");
+			out.println("</script>");
+			
+//			RequestDispatcher dispatcher = request.getRequestDispatcher("loginForm.html");
+//			dispatcher.forward(request, response);
+			
 		}
 	}
 
