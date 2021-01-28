@@ -39,11 +39,11 @@ public class Md {
 		this.mdid = mdid;
 	}
 
-	public String getitem() {
+	public String getItem() {
 		return item;
 	}
 
-	public void setitem(String item) {
+	public void setItem(String item) {
 		this.item = item;
 	}
 
@@ -95,11 +95,11 @@ public class Md {
 		this.content = content;
 	}
 
-	public int gethit() {
+	public int getHit() {
 		return hit;
 	}
 
-	public void sethit(int hit) {
+	public void setHit(int hit) {
 		this.hit = hit;
 	}
 
