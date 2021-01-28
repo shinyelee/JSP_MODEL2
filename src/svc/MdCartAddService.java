@@ -6,33 +6,34 @@ import java.util.ArrayList;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import vo.Cart;
-import vo.Goods;
-import dao.GoodsDAO;
+import vo.Md;
+import dao.MdDAO;
 
 // 새로운 장바구니 항목을 추가하는 요청을 처리하는 비즈니스 로직을 구현하는 Service 클래스.
-public class GoodsCartAddService {
+public class MdCartAddService {
 
 	// 파라미터 값으로 전송된 id 값을 가지고 있는 굿즈 상품 정보를 얻어오는 메소드를 정의.
-	public Goods getCartGoods(int id) {
+	public Md getCartMd(int id) {
 		Connection con = getConnection();
-		GoodsDAO goodsDAO = GoodsDAO.getInstance();
-		goodsDAO.setConnection(con);	
-		Goods goods = goodsDAO.selectGoods(id);
+		MdDAO mdDAO = MdDAO.getInstance();
+		mdDAO.setConnection(con);	
+		Md md = mdDAO.selectMd(id);
 		close(con);
-		return goods;
+		return md;
 	}
 
 	// 장바구니 항목을 추가하는 기능이 구현된 메소드를 정의.
-	public void addCart(HttpServletRequest request, Goods cartGoods) {
-		HttpSession session = request.getSession(); // 요청을 한 클라이언트의 세션 객체를 얻어옴.
+	public void addCart(HttpServletRequest request, Md cartMd) {
+		// 요청을 한 클라이언트의 세션 객체를 얻어옴.
+		HttpSession session = request.getSession();
 		// 현재 세션 영역에 저장되어 있는 장바구니 목록을 얻어옴.
 		ArrayList<Cart> cartList = (ArrayList<Cart>)session.getAttribute("cartList");
 		
 		// 요청시 아직 세션 영역에 장바구니 목록 객체가 존재하지 않으면, 즉, 장바구니 요청을 처음 실행하는 경우에는
 		// 장바구니 항목을 요소로 추가할 ArrayList 객체를 생성해서 해당 객체를 세션 영역의 속성으로 공유해줌.
 		if(cartList == null){
-			cartList = new ArrayList<Cart>();
-			session.setAttribute("cartList", cartList);
+		   cartList = new ArrayList<Cart>();
+		   session.setAttribute("cartList", cartList);
 		}
 		
 		// 요청에 의해서 추가되는 장바구니 항목이 장바구니 항목 목록에 이미 존재하는 항목인지를 판단하는 변수를 정의.
@@ -42,11 +43,10 @@ public class GoodsCartAddService {
 		// 새로 추가할 장바구니 항목이 기존 장바구니 항목 목록(cartList)에 존재하는지를 판단하여
 		// 기존에 존재하는 장바구니 항목이면 isNewCart 변수 값을 false로 변경해 주고 기존 장바구니 항목의 수량을 하나 증가시킴.
 		for (int i = 0; i < cartList.size(); i++) {
-			
 			// 각 장바구니 항목 데이터의 식별자를 name 값으로 사용하기 때문에
 			// 새로 추가하는 상품(cartGoods)의 name 값과 동일한 name 값을 가지고 있는 cart 객체가 존재하면
 			// 새로 추가하려는 상품의 장바구니 항목이 존재한다고 판단.
-			if(cartGoods.getName().equals(cartList.get(i).getName())){
+			if(cartMd.getItem().equals(cartList.get(i).getItem())){
 				isNewCart = false;
 				// 새로 장바구니에 담는 굿즈 상품의 장바구니 항목 개수를 증가시킴.
 				cartList.get(i).setQty(cartList.get(i).getQty()+1);
@@ -58,9 +58,9 @@ public class GoodsCartAddService {
 		// 장바구니 항목을 저장하는 cartList 객체에 새로운 Cart 객체를 생성하여 추가.
 		if(isNewCart){
 			Cart cart = new Cart();
-			cart.setImage(cartGoods.getImage());
-			cart.setName(cartGoods.getName());
-			cart.setPrice(cartGoods.getPrice());
+			cart.setImage(cartMd.getImage());
+			cart.setItem(cartMd.getItem());
+			cart.setPrice(cartMd.getPrice());
 			cart.setQty(1);
 			cartList.add(cart);
 		}
