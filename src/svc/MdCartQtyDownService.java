@@ -15,7 +15,7 @@ public class MdCartQtyDownService {
 		// 세션 영역에 공유되어 있는 장바구니 목록 객체를 얻어옴.
 		ArrayList<Cart> cartList = (ArrayList<Cart>)session.getAttribute("cartList");
 		
-		// 수량을 감소시킬 장바구니 항목 객체를 name 값으로 비교해 검색한 후 해당 객체의 수량 값을 감소시킴.
+		// 수량을 감소시킬 장바구니 항목 객체를 item 값으로 비교해 검색한 후 해당 객체의 수량 값을 감소시킴.
 		for (int i = 0; i < cartList.size(); i++) {
 			
 			if(cartList.get(i).getItem().equals(item)){
