@@ -11,6 +11,9 @@
 	<!-- 게시판 -->
 	<a href="boardList.bo">게시판</a>
 	
+	<!-- 쇼핑몰 -->
+	<a href="mdList.md">MD샵</a>
+	
 	<!-- 로그인/로그아웃 -->
 <%	// 현재 세션 영역에 "id"라는 이름으로 저장돼 있는 속성 값을 얻어옴.
 	String id = (String)session.getAttribute("id");
