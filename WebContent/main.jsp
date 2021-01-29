@@ -22,7 +22,6 @@
 	if(id != null) {
 %>
 	<a href="logout">로그아웃</a>
-	<a href="loginSuccess.jsp">내정보</a>
 <%
 	} // "id"라는 이름의 속성 값이 저장되어 있으면(=로그인 상태) "로그아웃" 링크 출력.
 	else {
