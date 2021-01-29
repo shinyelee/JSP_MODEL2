@@ -31,11 +31,11 @@ public class Md {
 	}
 	
 	// alt+shift+s -> r(Generate Getters and Setters) -> Select All -> OK.
-	public int getmdid() {
+	public int getMdid() {
 		return mdid;
 	}
 
-	public void setmdid(int mdid) {
+	public void setMdid(int mdid) {
 		this.mdid = mdid;
 	}
 

@@ -36,7 +36,7 @@ public class MdCartSearchAction implements Action {
 
 		request.setAttribute("totalMoney", totalMoney);
 		// 포워딩 정보를 ActionForward 객체로 생성.
-		// 포워딩될 페이지는 GoodsList.jsp 페이지로 지정했으며 포워딩 방식은 디스패치 방식으로 처리하기 위해 false로 지정.
+		// 포워딩될 페이지는 mdCartList.jsp 페이지로 지정했으며 포워딩 방식은 디스패치 방식으로 처리하기 위해 false로 지정.
 		ActionForward forward = new ActionForward("mdCartList.jsp", false);
 		
 		return forward;

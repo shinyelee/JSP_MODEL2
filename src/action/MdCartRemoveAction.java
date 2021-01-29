@@ -19,7 +19,7 @@ public class MdCartRemoveAction implements Action {
 		// 장바구니 항목 삭제 요청을 처리하는 메소드를 호출. 세션 영역에 공유되어 있는 장바구니 항목 정보를 삭제해야 하기 때문에 세션에 접근하기 위해서 request 객체를 인자로 던짐.
 		mdCartRemoveService.cartRemove(request,kindArray);
 		// 장바구니 항목 삭제 요청 처리를 실행한 후 포워딩 정보를 ActionForward 객체로 생성.
-		// 장바구니 항목 삭제 처리를 한 후 장바구니 목록보기 요청을 다시 하기 위해서 URL은mdCartList.md로, 포워딩은 리다이렉트 방식으로 처리하기 위해 true로 지정.
+		// 장바구니 항목 삭제 처리를 한 후 장바구니 목록보기 요청을 다시 하기 위해서 URL은 mdCartList.md로, 포워딩은 리다이렉트 방식으로 처리하기 위해 true로 지정.
 		ActionForward forward = new ActionForward("mdCartList.md",true);
 		
 		return forward;

@@ -12,10 +12,10 @@ a, a:hover {
 }
 
 #registForm {
-width: 500px;
-cate2: 580px;
-border : 1px solid gray;
-margin:auto;
+	width: 500px;
+	cate2: 580px;
+	border: 1px solid gray;
+	margin:auto;
 }
 
 h2 {
@@ -45,7 +45,7 @@ table {
 </head>
 <body>
 	<section id = "registForm">
-		<h2>정보 등록</h2>
+		<h2>상품 등록</h2>
 		<form action="mdRegist.md" method="post" name="writeForm" enctype="multipart/form-data">
 			<table>
 				<tr>
@@ -80,8 +80,8 @@ table {
 			<section id="buttonList"> 
 				<input type="submit" value="등록"/>      
 				<input type="reset" value="리셋"/>      
-				<input type="button" value="목록" onClick="window.location.href='mdList.md'"/>   
-			</section>
+				<input type="button" value="목록" onClick="window.location.href='mdList.md'"/>
+			</section><br>
 		</form>
 	</section>
 </body>
