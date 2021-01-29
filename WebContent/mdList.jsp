@@ -37,19 +37,19 @@ table {
 	text-align: center;
 }
 
-#todayImageList{
+#todayImageList {
 	text-align: center;
 }
 
-#productImage{
+#productImage {
 	width: 150px;
 	height: 150px;
 	border: none;
 }
 
-#todayImage{
-	width: 100px;
-	height: 100px;
+#todayImage {
+	width: 80px;
+	height: 80px;
 	border: none;
 }
 </style>
