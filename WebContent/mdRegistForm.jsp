@@ -13,7 +13,7 @@ a, a:hover {
 
 #registForm {
 	width: 500px;
-	cate2: 580px;
+	height: 580px;
 	border: 1px solid gray;
 	margin:auto;
 }
